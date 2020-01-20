@@ -1,0 +1,9 @@
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\bin\Debug\Team_5_Workshop.exe.config
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\bin\Debug\Team_5_Workshop.exe
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\bin\Debug\Team_5_Workshop.pdb
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\obj\Debug\Team_5_Workshop.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\obj\Debug\Team_5_Workshop.Properties.Resources.resources
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\obj\Debug\Team_5_Workshop.csproj.GenerateResource.cache
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\obj\Debug\Team_5_Workshop.exe
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\obj\Debug\Team_5_Workshop.pdb
+C:\Users\834650\source\repos\Team_5_Workshop\Team_5_Workshop\obj\Debug\Team_5_Workshop.MainForm.resources
