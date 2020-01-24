@@ -9,4 +9,8 @@ Tables:
 4: Suppliers - Ivan
 5: Packages_Products_Suppliers - Bilal
 
+I have added a GUI for the for the main screen. Please make a menustrip item for your part of the project, as needed.
+
+
+
 
