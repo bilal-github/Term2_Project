@@ -33,5 +33,10 @@ namespace Team5_Workshop4
         {
             IsMdiContainer = true;
         }
+
+        private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

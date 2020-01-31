@@ -16,5 +16,17 @@ namespace Team5_Workshop4
         {
             InitializeComponent();
         }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void frmSuppliers_Load(object sender, EventArgs e)
+        {
+            List<Suppliers> Supplier = SuppliersDB.GetSuppliers();
+
+            dataGridView1.DataSource = Supplier;
+        }
     }
 }
