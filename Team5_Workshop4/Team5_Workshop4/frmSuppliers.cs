@@ -17,6 +17,8 @@ namespace Team5_Workshop4
             InitializeComponent();
         }
 
+        private Suppliers supplier;
+
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Close();
@@ -24,9 +26,31 @@ namespace Team5_Workshop4
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
+            LoadStateComboBox();
             List<Suppliers> Supplier = SuppliersDB.GetSuppliers();
+            DisplaySuppliers();
 
             dataGridView1.DataSource = Supplier;
+        }
+        private void LoadStateComboBox()
+        {
+            List<Suppliers> supplier = new List<Suppliers>();
+            try
+            {
+                supplier = SuppliersDB.GetSuppliers();
+                dblSupplierID.DataSource = supplier;
+                dblSupplierID.DisplayMember = "SupplierId";
+                dblSupplierID.ValueMember = "SupName";
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
+        private void DisplaySuppliers()
+        {
+            //txtSupplierName.Text = supplier.SupName;   
         }
     }
 }

@@ -31,13 +31,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblSupplierID = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
-            this.txtSupplierID = new System.Windows.Forms.TextBox();
-            this.btnGetSupplier = new System.Windows.Forms.Button();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.btnModifySupplier = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
+            this.dblSupplierID = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +45,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(470, 11);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(373, 266);
@@ -75,24 +73,6 @@
             this.lblSupplierName.TabIndex = 3;
             this.lblSupplierName.Text = "Supplier Name:";
             // 
-            // txtSupplierID
-            // 
-            this.txtSupplierID.Location = new System.Drawing.Point(148, 31);
-            this.txtSupplierID.Name = "txtSupplierID";
-            this.txtSupplierID.Size = new System.Drawing.Size(100, 20);
-            this.txtSupplierID.TabIndex = 4;
-            // 
-            // btnGetSupplier
-            // 
-            this.btnGetSupplier.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnGetSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetSupplier.Location = new System.Drawing.Point(254, 24);
-            this.btnGetSupplier.Name = "btnGetSupplier";
-            this.btnGetSupplier.Size = new System.Drawing.Size(108, 33);
-            this.btnGetSupplier.TabIndex = 5;
-            this.btnGetSupplier.Text = "Get Supplier";
-            this.btnGetSupplier.UseVisualStyleBackColor = false;
-            // 
             // txtSupplierName
             // 
             this.txtSupplierName.BackColor = System.Drawing.SystemColors.Control;
@@ -112,17 +92,6 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add Supplier";
             this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteSupplier
-            // 
-            this.btnDeleteSupplier.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDeleteSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(287, 143);
-            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
-            this.btnDeleteSupplier.Size = new System.Drawing.Size(120, 38);
-            this.btnDeleteSupplier.TabIndex = 8;
-            this.btnDeleteSupplier.Text = "Delete Supplier";
-            this.btnDeleteSupplier.UseVisualStyleBackColor = false;
             // 
             // btnModifySupplier
             // 
@@ -147,22 +116,28 @@
             this.btnQuit.UseVisualStyleBackColor = false;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
+            // dblSupplierID
+            // 
+            this.dblSupplierID.FormattingEnabled = true;
+            this.dblSupplierID.Location = new System.Drawing.Point(146, 31);
+            this.dblSupplierID.Name = "dblSupplierID";
+            this.dblSupplierID.Size = new System.Drawing.Size(121, 21);
+            this.dblSupplierID.TabIndex = 11;
+            // 
             // frmSuppliers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 299);
+            this.Controls.Add(this.dblSupplierID);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnModifySupplier);
-            this.Controls.Add(this.btnDeleteSupplier);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtSupplierName);
-            this.Controls.Add(this.btnGetSupplier);
-            this.Controls.Add(this.txtSupplierID);
             this.Controls.Add(this.lblSupplierName);
             this.Controls.Add(this.lblSupplierID);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSuppliers";
             this.Text = "Suppliers";
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
@@ -177,12 +152,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblSupplierID;
         private System.Windows.Forms.Label lblSupplierName;
-        private System.Windows.Forms.TextBox txtSupplierID;
-        private System.Windows.Forms.Button btnGetSupplier;
         private System.Windows.Forms.TextBox txtSupplierName;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnDeleteSupplier;
         private System.Windows.Forms.Button btnModifySupplier;
         private System.Windows.Forms.Button btnQuit;
+        private System.Windows.Forms.ComboBox dblSupplierID;
     }
 }
