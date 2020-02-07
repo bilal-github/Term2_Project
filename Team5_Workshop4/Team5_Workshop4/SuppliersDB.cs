@@ -39,7 +39,7 @@ namespace Team5_Workshop4
             } // conncection object recycled
             return supplier;
         }// end method
-        public static List<Suppliers> GetSuppliersBYID(int ID)
+        public static List<Suppliers> GetSuppliersBYID(int id)
         {
             List<Suppliers> supplier = new List<Suppliers>();// an empty list
             //Suppliers supplier = new Suppliers();
@@ -48,7 +48,7 @@ namespace Team5_Workshop4
             using (SqlConnection connection = TravelExpertsDB.GetConnection())
             {
                 // create command
-                string query = "SELECT SupplierId, SupName from Suppliers WHERE SupplierId ='" + ID + "' ORDER BY SupplieriD";
+                string query = "SELECT SupplierId, SupName from Suppliers WHERE SupplierId ='" + id + "' ORDER BY SupplieriD";
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
                     // run the command and process results

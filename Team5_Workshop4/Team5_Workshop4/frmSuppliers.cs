@@ -26,17 +26,17 @@ namespace Team5_Workshop4
 
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
-            LoadStateComboBox();
+            int supplierID = (int)LoadStateComboBox(0);
             //if (dblSupplierID.Text != null)
             //{
                 
             //}
             
-            DisplaySuppliers();
+            DisplaySuppliers(supplierID);
 
             
         }
-        private void LoadStateComboBox()
+        private int LoadStateComboBox(int index)
         {
             List<Suppliers> supplier = new List<Suppliers>();
             try
@@ -53,20 +53,18 @@ namespace Team5_Workshop4
             {
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
+            return supplier[index].SupplierId;
         }
-        private void DisplaySuppliers()
+        private void DisplaySuppliers(int supplierID)
         {
-            
-            
-
-            List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYID(Convert.ToInt32(dblSupplierID.Items[0]));
+            List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYID(supplierID);
                 dataGridView1.DataSource = Supplier;
             //txtSupplierName.Text = supplier.SupName;   
         }
 
         private void dblSupplierID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DisplaySuppliers();
+            DisplaySuppliers(Convert.ToInt32(dblSupplierID.Text));
         }
     }
 }
