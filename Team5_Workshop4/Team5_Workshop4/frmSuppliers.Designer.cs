@@ -123,6 +123,7 @@
             this.dblSupplierID.Name = "dblSupplierID";
             this.dblSupplierID.Size = new System.Drawing.Size(121, 21);
             this.dblSupplierID.TabIndex = 11;
+            this.dblSupplierID.SelectedIndexChanged += new System.EventHandler(this.dblSupplierID_SelectedIndexChanged);
             // 
             // frmSuppliers
             // 

@@ -28,7 +28,8 @@ namespace Team5_Workshop4
                         {
                             // proccess next record from data reader
                             sp = new Suppliers();
-                            sp.SupplierId = reader["SupplierId"].ToString();
+                            sp.SupplierId = 
+                                (int)reader["SupplierId"];
                             sp.SupName = reader["SupName"].ToString();
                             supplier.Add(sp);
 
@@ -38,7 +39,7 @@ namespace Team5_Workshop4
             } // conncection object recycled
             return supplier;
         }// end method
-        public static List<Suppliers> GetSuppliersBYID(string ID)
+        public static List<Suppliers> GetSuppliersBYID(int ID)
         {
             List<Suppliers> supplier = new List<Suppliers>();// an empty list
             //Suppliers supplier = new Suppliers();
@@ -58,7 +59,8 @@ namespace Team5_Workshop4
                         {
                             // proccess next record from data reader
                             sp = new Suppliers();
-                            sp.SupplierId = reader["SupplierId"].ToString();
+                            sp.SupplierId = (int)reader["SupplierId"];
+                            sp.SupName = reader["SupName"].ToString();
 
                             supplier.Add(sp);
 

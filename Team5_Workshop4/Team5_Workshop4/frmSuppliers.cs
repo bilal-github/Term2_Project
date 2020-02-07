@@ -27,11 +27,14 @@ namespace Team5_Workshop4
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             LoadStateComboBox();
-            List<Suppliers> Supplier = Convert.ToInt32(dblSupplierID.SelectedIndex);
+            //if (dblSupplierID.Text != null)
+            //{
+                
+            //}
             
             DisplaySuppliers();
 
-            dataGridView1.DataSource = Supplier;
+            
         }
         private void LoadStateComboBox()
         {
@@ -53,7 +56,17 @@ namespace Team5_Workshop4
         }
         private void DisplaySuppliers()
         {
+            
+            
+
+            List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYID(Convert.ToInt32(dblSupplierID.Items[0]));
+                dataGridView1.DataSource = Supplier;
             //txtSupplierName.Text = supplier.SupName;   
+        }
+
+        private void dblSupplierID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplaySuppliers();
         }
     }
 }
