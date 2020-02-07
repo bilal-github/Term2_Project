@@ -27,7 +27,8 @@ namespace Team5_Workshop4
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             LoadStateComboBox();
-            List<Suppliers> Supplier = SuppliersDB.GetSuppliers();
+            List<Suppliers> Supplier = Convert.ToInt32(dblSupplierID.SelectedIndex);
+            
             DisplaySuppliers();
 
             dataGridView1.DataSource = Supplier;
@@ -37,10 +38,12 @@ namespace Team5_Workshop4
             List<Suppliers> supplier = new List<Suppliers>();
             try
             {
-                supplier = SuppliersDB.GetSuppliers();
-                dblSupplierID.DataSource = supplier;
-                dblSupplierID.DisplayMember = "SupplierId";
-                dblSupplierID.ValueMember = "SupName";
+                supplier = SuppliersDB.GetSupplier();
+                foreach (Suppliers s in supplier)
+                {
+                    
+                    dblSupplierID.Items.Add(s.SupplierId);
+                }
                 
             }
             catch (Exception ex)

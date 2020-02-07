@@ -9,7 +9,7 @@ namespace Team5_Workshop4
 {
     public static class SuppliersDB
     {
-        public static List<Suppliers> GetSuppliers()
+        public static List<Suppliers> GetSupplier()
         {
             List<Suppliers> supplier = new List<Suppliers>();// an empty list
             Suppliers sp; // auxiliary for reading
@@ -60,7 +60,7 @@ namespace Team5_Workshop4
                             sp = new Suppliers();
                             sp.SupplierId = reader["SupplierId"].ToString();
 
-                            //supplier.Add(sp);
+                            supplier.Add(sp);
 
                         }
                     } // closes reader and recycles object
