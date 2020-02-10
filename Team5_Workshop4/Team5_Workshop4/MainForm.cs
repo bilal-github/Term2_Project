@@ -21,5 +21,22 @@ namespace Team5_Workshop4
         {
             Application.Exit();
         }
+
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form newForm = new frmSuppliers();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            IsMdiContainer = true;
+        }
+
+        private void manageSuppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
