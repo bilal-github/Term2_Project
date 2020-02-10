@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddModifyDeleteSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddModifyDeleteSuppliers.Designer.cs">
+      <DependentUpon>frmAddModifyDeleteSuppliers.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPackageManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Suppliers.cs" />
     <Compile Include="SuppliersDB.cs" />
     <Compile Include="TravelExpertsDB.cs" />
+    <EmbeddedResource Include="frmAddModifyDeleteSuppliers.resx">
+      <DependentUpon>frmAddModifyDeleteSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPackageManager.resx">
       <DependentUpon>frmPackageManager.cs</DependentUpon>
     </EmbeddedResource>

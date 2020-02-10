@@ -41,3 +41,4 @@ C:\Users\565974\Documents\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debu
 C:\Users\565974\Documents\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csproj.GenerateResource.cache
 C:\Users\565974\Documents\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.exe
 C:\Users\565974\Documents\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.pdb
+C:\Users\565974\Documents\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmAddModifyDeleteSuppliers.resources

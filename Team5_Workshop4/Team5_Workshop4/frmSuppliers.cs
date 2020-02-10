@@ -58,13 +58,90 @@ namespace Team5_Workshop4
         private void DisplaySuppliers(int supplierID)
         {
             List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYID(supplierID);
-                dataGridView1.DataSource = Supplier;
+            dataGridView1.DataSource = Supplier;
             //txtSupplierName.Text = supplier.SupName;   
+        }
+
+        private void DisplaySupName(string supname)
+        {
+            List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYName(supname);
+            txtSupName.Text = supplier.SupName;
+                 
         }
 
         private void dblSupplierID_SelectedIndexChanged(object sender, EventArgs e)
         {
             DisplaySuppliers(Convert.ToInt32(dblSupplierID.Text));
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmAddModifyDeleteSuppliers  addSupplierForm = new frmAddModifyDeleteSuppliers();
+            addSupplierForm.addSupplier = true;
+            DialogResult result = addSupplierForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                supplier = addSupplierForm.supplier;
+                dblSupplierID.SelectedIndex = Convert.ToInt32(supplier.SupplierId);
+                
+            }
+
+
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frmAddModifyDeleteSuppliers addSupplierForm = new frmAddModifyDeleteSuppliers();
+            //addSupplierForm.addSupplier = true;
+            //DialogResult result = addSupplierForm.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    supplier = addSupplierForm.supplier;
+            //    dblSupplierID.SelectedIndex = Convert.ToInt32(supplier.SupplierId);
+
+            //}
+        }
+
+        private void btnModifySupplier_Click(object sender, EventArgs e)
+        {
+            frmAddModifyDeleteSuppliers modifySupplierForm = new frmAddModifyDeleteSuppliers();
+            modifySupplierForm.addSupplier = false;
+            modifySupplierForm.supplier = supplier;
+            DialogResult result = modifySupplierForm.ShowDialog();
+            if(result == DialogResult.OK)
+            {
+                supplier = modifySupplierForm.supplier;
+                this.DisplaySupName(supplier.SupName);
+            }
+            
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //DialogResult result = MessageBox.Show("Delete " + supplier.SupplierId + "?",
+            //    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (result == DialogResult.Yes)
+            //{
+            //try
+            //{
+            //    if (!SuppliersDB.DeleteSupplier(supplier))
+            //    {
+            //        MessageBox.Show("Another user has updated or deleted " +
+            //            "that customer.", "Database Error");
+            //        this.DisplaySuppliers(supplier.SupplierId);
+            //        //if (supplier != null)
+            //        //    this.DisplaySupName();
+
+            //    }
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, ex.GetType().ToString());
+            //}
+            
+        }
     }
 }
+
