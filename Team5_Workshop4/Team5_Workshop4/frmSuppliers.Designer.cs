@@ -35,8 +35,6 @@
             this.btnQuit = new System.Windows.Forms.Button();
             this.dblSupplierID = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSupName = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +66,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(54, 148);
+            this.btnAdd.Location = new System.Drawing.Point(54, 119);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(102, 38);
             this.btnAdd.TabIndex = 7;
@@ -80,7 +78,7 @@
             // 
             this.btnModifySupplier.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnModifySupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifySupplier.Location = new System.Drawing.Point(177, 148);
+            this.btnModifySupplier.Location = new System.Drawing.Point(177, 119);
             this.btnModifySupplier.Name = "btnModifySupplier";
             this.btnModifySupplier.Size = new System.Drawing.Size(119, 38);
             this.btnModifySupplier.TabIndex = 9;
@@ -117,27 +115,11 @@
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
-            // 
-            // txtSupName
-            // 
-            this.txtSupName.Location = new System.Drawing.Point(95, 80);
-            this.txtSupName.Name = "txtSupName";
-            this.txtSupName.Size = new System.Drawing.Size(100, 20);
-            this.txtSupName.TabIndex = 14;
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(312, 148);
+            this.btnDelete.Location = new System.Drawing.Point(312, 119);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(119, 38);
             this.btnDelete.TabIndex = 15;
@@ -151,8 +133,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 299);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.txtSupName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dblSupplierID);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnModifySupplier);
@@ -180,8 +160,6 @@
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.ComboBox dblSupplierID;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtSupName;
         private System.Windows.Forms.Button btnDelete;
     }
 }

@@ -125,28 +125,48 @@ namespace Team5_Workshop4
 
 
         // Add Supplier
-        public static int AddSupplier(Suppliers sup)
+        public static void AddSupplier(Suppliers sup)
         {
-
-            int supId = 0;
-            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            bool isPresent = false;
+            int count = 0;
+            using(SqlConnection connection1 = TravelExpertsDB.GetConnection())
             {
-                
-                
-                string insertStatement =
-                  
-                    "INSERT INTO Suppliers(SupplierId, SupName) " +
-                    "OUTPUT inserted.SupplierId " +    
-                    "Values(@SupplierId, @SupName)";
-                using(SqlCommand cmd = new SqlCommand(insertStatement, connection))
+                string SelectString = "SELECT SupplierID from suppliers where SupplierID = @SupplierID";
+                using(SqlCommand command = new SqlCommand(SelectString, connection1))
                 {
-                    cmd.Parameters.AddWithValue("@SupplierId", sup.SupplierId);
-                    cmd.Parameters.AddWithValue("@SupName", sup.SupName);
-                    connection.Open();
-                    supId = (int)cmd.ExecuteScalar();
+                    command.Parameters.AddWithValue("SupplierID", sup.SupplierId);
+                    connection1.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        count++;
+                    }
+                    if (count > 0)
+                    {
+                        isPresent = true;
+                    }
                 }
             }
-            return supId;
+
+
+            int supId = 0;
+            if(isPresent == false)
+            {
+                using (SqlConnection connection = TravelExpertsDB.GetConnection())
+                {     
+                    string insertStatement =
+                  
+                        "INSERT INTO Suppliers(SupplierId, SupName) "+    
+                        "Values(@SupplierId, @SupName)";
+                    using(SqlCommand cmd = new SqlCommand(insertStatement, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@SupplierId", sup.SupplierId);
+                        cmd.Parameters.AddWithValue("@SupName", sup.SupName);
+                        connection.Open();
+                        cmd.ExecuteNonQuery() ;
+                    }
+                }
+            }
         }
 
 

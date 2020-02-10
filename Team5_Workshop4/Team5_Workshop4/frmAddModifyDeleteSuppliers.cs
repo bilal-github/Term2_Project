@@ -47,7 +47,7 @@ namespace Team5_Workshop4
                 this.PutSupplierData(supplier);
                 try
                 {
-                    supplier.SupplierId = SuppliersDB.AddSupplier(supplier);
+                   SuppliersDB.AddSupplier(supplier);
                     this.DialogResult = DialogResult.OK;
                 }
                 catch (Exception ex)
@@ -83,6 +83,7 @@ namespace Team5_Workshop4
         private void PutSupplierData(Suppliers supplier)
         {
             supplier.SupName = txtSupName.Text;
+            supplier.SupplierId = Convert.ToInt32(txtSupID.Text);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

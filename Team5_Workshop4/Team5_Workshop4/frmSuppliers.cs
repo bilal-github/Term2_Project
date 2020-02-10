@@ -42,6 +42,7 @@ namespace Team5_Workshop4
             try
             {
                 supplier = SuppliersDB.GetSupplier();
+                dblSupplierID.Items.Clear();
                 foreach (Suppliers s in supplier)
                 {
                     
@@ -65,7 +66,7 @@ namespace Team5_Workshop4
         private void DisplaySupName(string supname)
         {
             List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYName(supname);
-            txtSupName.Text = supplier.SupName;
+            //txtSupName.Text = supplier.SupName;
                  
         }
 
@@ -82,7 +83,8 @@ namespace Team5_Workshop4
             if (result == DialogResult.OK)
             {
                 supplier = addSupplierForm.supplier;
-                dblSupplierID.SelectedIndex = Convert.ToInt32(supplier.SupplierId);
+                LoadStateComboBox(0);
+                //dblSupplierID.SelectedIndex = Convert.ToInt32(supplier.SupplierId);
                 
             }
 
@@ -119,28 +121,29 @@ namespace Team5_Workshop4
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //DialogResult result = MessageBox.Show("Delete " + supplier.SupplierId + "?",
-            //    "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (result == DialogResult.Yes)
-            //{
-            //try
-            //{
-            //    if (!SuppliersDB.DeleteSupplier(supplier))
-            //    {
-            //        MessageBox.Show("Another user has updated or deleted " +
-            //            "that customer.", "Database Error");
-            //        this.DisplaySuppliers(supplier.SupplierId);
-            //        //if (supplier != null)
-            //        //    this.DisplaySupName();
+            DialogResult result = MessageBox.Show("Delete " + dataGridView1.DataSource + "?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (!SuppliersDB.DeleteSupplier(supplier))
+                    {
+                        MessageBox.Show("Another user has updated or deleted " +
+                            "that customer.", "Database Error");
+                        this.DisplaySuppliers(supplier.SupplierId);
+                        //if (supplier != null)
+                        //    this.DisplaySupName();
 
-            //    }
+                    }
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, ex.GetType().ToString());
-            //}
-            
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                }
+
+            }
         }
     }
 }
