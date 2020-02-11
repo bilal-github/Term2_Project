@@ -11,32 +11,37 @@ using System.Windows.Forms;
 namespace Team5_Workshop4
 {
     public partial class frmAddModifyDeleteSuppliers : Form
-    {
-        public frmAddModifyDeleteSuppliers()
+    { public Suppliers supplier;
+        public frmAddModifyDeleteSuppliers(Suppliers _supplier)
         {
+            supplier = _supplier;
             InitializeComponent();
         }
 
         public bool addSupplier;
-        public Suppliers supplier;
+         
 
 
         private void frmAddModifyDeleteSuppliers_Load(object sender, EventArgs e)
         {
+            txtSupID.Text = supplier.SupplierId.ToString();
+            txtSupName.Text = supplier.SupName;
             if (addSupplier)
             {
                 this.Text = "Add Supplier";
+
             }
             else
             {
                 this.Text = "Modify Supplier";
-                
+                this.DisplaySupplier();
             }
         }
 
         private void DisplaySupplier()
         {
-            txtSupName.Text = supplier.SupName;
+
+            //txtSupName.Text = supplier.SupName;
         }
 
         private void btnAccept_Click(object sender, EventArgs e)
@@ -58,7 +63,10 @@ namespace Team5_Workshop4
             else // UPDATE
             {
                 Suppliers newSupplier = new Suppliers();
-                newSupplier.SupName = supplier.SupName;
+                Suppliers oldSupplier = supplier;
+                newSupplier.SupName = txtSupName.Text;
+                oldSupplier = SuppliersDB.GetSuppliersBYID(Convert.ToInt32(txtSupID.Text))[0];
+                
                 this.PutSupplierData(newSupplier);
                 try
                 {

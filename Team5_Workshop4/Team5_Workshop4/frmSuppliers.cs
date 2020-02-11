@@ -17,7 +17,7 @@ namespace Team5_Workshop4
             InitializeComponent();
         }
 
-        private Suppliers supplier;
+        private Suppliers supplier = new Suppliers();
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
@@ -67,7 +67,7 @@ namespace Team5_Workshop4
         {
             List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYName(supname);
             //txtSupName.Text = supplier.SupName;
-                 
+
         }
 
         private void dblSupplierID_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,14 +77,15 @@ namespace Team5_Workshop4
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            frmAddModifyDeleteSuppliers  addSupplierForm = new frmAddModifyDeleteSuppliers();
+            frmAddModifyDeleteSuppliers  addSupplierForm = new frmAddModifyDeleteSuppliers(supplier);
             addSupplierForm.addSupplier = true;
             DialogResult result = addSupplierForm.ShowDialog();
+            
             if (result == DialogResult.OK)
             {
                 supplier = addSupplierForm.supplier;
                 LoadStateComboBox(0);
-                //dblSupplierID.SelectedIndex = Convert.ToInt32(supplier.SupplierId);
+                
                 
             }
 
@@ -106,14 +107,25 @@ namespace Team5_Workshop4
 
         private void btnModifySupplier_Click(object sender, EventArgs e)
         {
-            frmAddModifyDeleteSuppliers modifySupplierForm = new frmAddModifyDeleteSuppliers();
+            //int supID = Convert.ToInt32(dblSupplierID.SelectedItem);
+            //supplier = SuppliersDB.GetSuppliersBYID(supID)[0];
+            int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+            supplier.SupplierId = Convert.ToInt32(selectedRow.Cells[0].Value);
+            supplier.SupName = selectedRow.Cells[1].Value.ToString();
+            frmAddModifyDeleteSuppliers modifySupplierForm = new frmAddModifyDeleteSuppliers(supplier);
             modifySupplierForm.addSupplier = false;
             modifySupplierForm.supplier = supplier;
+
+            
             DialogResult result = modifySupplierForm.ShowDialog();
             if(result == DialogResult.OK)
             {
                 supplier = modifySupplierForm.supplier;
                 this.DisplaySupName(supplier.SupName);
+                DisplaySuppliers(supplier.SupplierId);
+                //dataGridView1.Update();
+                //dataGridView1.Refresh();
             }
             
 
@@ -121,29 +133,57 @@ namespace Team5_Workshop4
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Delete " + dataGridView1.DataSource + "?",
+            //frmAddModifyDeleteSuppliers addSupplierForm = new frmAddModifyDeleteSuppliers(supplier);
+            int supID = Convert.ToInt32(dblSupplierID.SelectedItem);
+            supplier = SuppliersDB.GetSuppliersBYID(supID)[0];
+
+            DialogResult result = MessageBox.Show("Delete " + dblSupplierID.SelectedItem.ToString() + "?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //MessageBox.Show(dataGridView1.SelectedCells[1].Value.ToString());
             if (result == DialogResult.Yes)
             {
+                
+                DisplaySuppliers(supplier.SupplierId);
+                //dataGridView1.Update();
+                //dataGridView1.Refresh();
+                ////supplier = addSupplierForm.supplier;
+                //LoadStateComboBox(0);
                 try
                 {
                     if (!SuppliersDB.DeleteSupplier(supplier))
                     {
                         MessageBox.Show("Another user has updated or deleted " +
                             "that customer.", "Database Error");
-                        this.DisplaySuppliers(supplier.SupplierId);
+                        //this.DisplaySuppliers(supplier.SupplierId);
                         //if (supplier != null)
-                        //    this.DisplaySupName();
+                        //    this.DisplaySupName(supname);
+
+                        
+                        
 
                     }
+                    else
+                    {
+                        UpdateRefresh();
+                    }
+
 
                 }
+
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
 
             }
+        }
+
+        private void UpdateRefresh()
+        {
+            DisplaySuppliers(supplier.SupplierId);
+            LoadStateComboBox(0);
+            dataGridView1.Update();
+            dataGridView1.Refresh();
         }
     }
 }

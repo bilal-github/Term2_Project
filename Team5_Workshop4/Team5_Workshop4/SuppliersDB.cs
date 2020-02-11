@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Team5_Workshop4
 {
@@ -132,6 +133,7 @@ namespace Team5_Workshop4
             using(SqlConnection connection1 = TravelExpertsDB.GetConnection())
             {
                 string SelectString = "SELECT SupplierID from suppliers where SupplierID = @SupplierID";
+                
                 using(SqlCommand command = new SqlCommand(SelectString, connection1))
                 {
                     command.Parameters.AddWithValue("SupplierID", sup.SupplierId);
@@ -167,6 +169,12 @@ namespace Team5_Workshop4
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Id already exists, please enter a new one");
+                
+                
+            }
         }
 
 
@@ -178,18 +186,23 @@ namespace Team5_Workshop4
             {
                 string updateStatement =
                     "UPDATE Suppliers SET " +
+                    " SupplierId = @newSupplierId, " +
                     " SupName = @newSupName " +
                     "WHERE SupplierId = @oldSupplierId " +
                     "AND SupName = @oldSupName";
                 using(SqlCommand cmd = new SqlCommand(updateStatement, connection))
                 {
+                    cmd.Parameters.AddWithValue("@newSupplierId", newSup.SupplierId);
+                    cmd.Parameters.AddWithValue("@oldSupplierId", oldSup.SupplierId);
                     cmd.Parameters.AddWithValue("@newSupName", newSup.SupName);
                     cmd.Parameters.AddWithValue("@oldSupName", oldSup.SupName);
                     connection.Open();
                     count = cmd.ExecuteNonQuery();
+                    
                 }
+                
             }
-            return (count > 0);
+            return true; 
         }
 
 
@@ -200,8 +213,8 @@ namespace Team5_Workshop4
             {
                 string deleteStatement =
                     "Delete From Suppliers " +
-                    "Where SupplierId - @SupplierId " +
-                    "AND SupName = @SupName";
+                    "Where SupplierId = @SupplierId " +
+                    "AND SupName = @SupName";   
                 using(SqlCommand cmd = new SqlCommand(deleteStatement, connection))
                 {
                     cmd.Parameters.AddWithValue("@SupplierId", sup.SupplierId);
