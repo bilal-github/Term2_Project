@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Bilal Ahmad, Eli, Ivan
+ * Purpose: Manages Packages, add, edit and delete
+ * Project: Workshop 4
+ * Date: Feb 12, 2020
+ * 
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

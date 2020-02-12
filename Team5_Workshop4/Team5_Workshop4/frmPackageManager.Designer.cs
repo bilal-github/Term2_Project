@@ -51,7 +51,6 @@
             this.txtPackageName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EditPackageTab = new System.Windows.Forms.TabPage();
-            this.btnEditClear = new System.Windows.Forms.Button();
             this.lblOverlayEditPackage = new System.Windows.Forms.Label();
             this.dgvOverlayEditPackage = new System.Windows.Forms.DataGridView();
             this.txtEditPackageID = new System.Windows.Forms.TextBox();
@@ -71,6 +70,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtEdiPackageName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnEditClear = new System.Windows.Forms.Button();
+            this.btnCancelEdit = new System.Windows.Forms.Button();
             this.EditPackageProductsTab = new System.Windows.Forms.TabPage();
             this.lblOverlayEditProducts = new System.Windows.Forms.Label();
             this.dgvOverlayEditProducts = new System.Windows.Forms.DataGridView();
@@ -82,7 +83,6 @@
             this.lstSuppliers = new System.Windows.Forms.ListBox();
             this.dgvEditProducts = new System.Windows.Forms.DataGridView();
             this.btnCompleteEditing = new System.Windows.Forms.Button();
-            this.btnCancelEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPackages)).BeginInit();
             this.tabControl.SuspendLayout();
             this.ViewPackagesTab.SuspendLayout();
@@ -136,9 +136,9 @@
             // 
             // btnEditProductsPackage
             // 
-            this.btnEditProductsPackage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEditProductsPackage.BackColor = System.Drawing.Color.Aqua;
             this.btnEditProductsPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditProductsPackage.Location = new System.Drawing.Point(63, 437);
+            this.btnEditProductsPackage.Location = new System.Drawing.Point(504, 437);
             this.btnEditProductsPackage.Name = "btnEditProductsPackage";
             this.btnEditProductsPackage.Size = new System.Drawing.Size(368, 70);
             this.btnEditProductsPackage.TabIndex = 3;
@@ -161,9 +161,9 @@
             // 
             // btnEditSelectedPackage
             // 
-            this.btnEditSelectedPackage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEditSelectedPackage.BackColor = System.Drawing.Color.Aqua;
             this.btnEditSelectedPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditSelectedPackage.Location = new System.Drawing.Point(498, 437);
+            this.btnEditSelectedPackage.Location = new System.Drawing.Point(77, 437);
             this.btnEditSelectedPackage.Name = "btnEditSelectedPackage";
             this.btnEditSelectedPackage.Size = new System.Drawing.Size(368, 70);
             this.btnEditSelectedPackage.TabIndex = 1;
@@ -198,7 +198,7 @@
             // 
             // btnClearStartDate
             // 
-            this.btnClearStartDate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnClearStartDate.BackColor = System.Drawing.Color.Aqua;
             this.btnClearStartDate.Location = new System.Drawing.Point(803, 93);
             this.btnClearStartDate.Name = "btnClearStartDate";
             this.btnClearStartDate.Size = new System.Drawing.Size(184, 43);
@@ -209,7 +209,7 @@
             // 
             // btnClearEndDate
             // 
-            this.btnClearEndDate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnClearEndDate.BackColor = System.Drawing.Color.Aqua;
             this.btnClearEndDate.Location = new System.Drawing.Point(803, 142);
             this.btnClearEndDate.Name = "btnClearEndDate";
             this.btnClearEndDate.Size = new System.Drawing.Size(184, 40);
@@ -220,7 +220,7 @@
             // 
             // btnAddPackage
             // 
-            this.btnAddPackage.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAddPackage.BackColor = System.Drawing.Color.Aqua;
             this.btnAddPackage.FlatAppearance.BorderSize = 0;
             this.btnAddPackage.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAddPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,22 +372,12 @@
             this.EditPackageTab.Text = "Edit Package";
             this.EditPackageTab.UseVisualStyleBackColor = true;
             // 
-            // btnEditClear
-            // 
-            this.btnEditClear.Location = new System.Drawing.Point(1092, 59);
-            this.btnEditClear.Name = "btnEditClear";
-            this.btnEditClear.Size = new System.Drawing.Size(256, 56);
-            this.btnEditClear.TabIndex = 40;
-            this.btnEditClear.Text = "Clear Form";
-            this.btnEditClear.UseVisualStyleBackColor = true;
-            this.btnEditClear.Click += new System.EventHandler(this.btnEditClear_Click);
-            // 
             // lblOverlayEditPackage
             // 
             this.lblOverlayEditPackage.AutoSize = true;
             this.lblOverlayEditPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOverlayEditPackage.ForeColor = System.Drawing.Color.Red;
-            this.lblOverlayEditPackage.Location = new System.Drawing.Point(201, 279);
+            this.lblOverlayEditPackage.Location = new System.Drawing.Point(89, 190);
             this.lblOverlayEditPackage.Name = "lblOverlayEditPackage";
             this.lblOverlayEditPackage.Size = new System.Drawing.Size(1216, 58);
             this.lblOverlayEditPackage.TabIndex = 38;
@@ -424,32 +414,35 @@
             // 
             // btnEditSave
             // 
+            this.btnEditSave.BackColor = System.Drawing.Color.Aqua;
             this.btnEditSave.Location = new System.Drawing.Point(1092, 174);
             this.btnEditSave.Name = "btnEditSave";
             this.btnEditSave.Size = new System.Drawing.Size(256, 56);
-            this.btnEditSave.TabIndex = 29;
+            this.btnEditSave.TabIndex = 9;
             this.btnEditSave.Text = "Save Changes";
-            this.btnEditSave.UseVisualStyleBackColor = true;
+            this.btnEditSave.UseVisualStyleBackColor = false;
             this.btnEditSave.Click += new System.EventHandler(this.btnEditSave_Click);
             // 
             // btnEditClearStartDate
             // 
+            this.btnEditClearStartDate.BackColor = System.Drawing.Color.Aqua;
             this.btnEditClearStartDate.Location = new System.Drawing.Point(809, 260);
             this.btnEditClearStartDate.Name = "btnEditClearStartDate";
             this.btnEditClearStartDate.Size = new System.Drawing.Size(184, 33);
-            this.btnEditClearStartDate.TabIndex = 27;
+            this.btnEditClearStartDate.TabIndex = 5;
             this.btnEditClearStartDate.Text = "Clear Start Date";
-            this.btnEditClearStartDate.UseVisualStyleBackColor = true;
+            this.btnEditClearStartDate.UseVisualStyleBackColor = false;
             this.btnEditClearStartDate.Click += new System.EventHandler(this.btnEditClearStartDate_Click);
             // 
             // btnEditClearEndDate
             // 
+            this.btnEditClearEndDate.BackColor = System.Drawing.Color.Aqua;
             this.btnEditClearEndDate.Location = new System.Drawing.Point(809, 304);
             this.btnEditClearEndDate.Name = "btnEditClearEndDate";
             this.btnEditClearEndDate.Size = new System.Drawing.Size(184, 33);
-            this.btnEditClearEndDate.TabIndex = 28;
+            this.btnEditClearEndDate.TabIndex = 7;
             this.btnEditClearEndDate.Text = "Clear End Date";
-            this.btnEditClearEndDate.UseVisualStyleBackColor = true;
+            this.btnEditClearEndDate.UseVisualStyleBackColor = false;
             this.btnEditClearEndDate.Click += new System.EventHandler(this.btnEditClearEndDate_Click);
             // 
             // txtEditBasePrice
@@ -458,7 +451,7 @@
             this.txtEditBasePrice.Location = new System.Drawing.Point(425, 174);
             this.txtEditBasePrice.Name = "txtEditBasePrice";
             this.txtEditBasePrice.Size = new System.Drawing.Size(343, 30);
-            this.txtEditBasePrice.TabIndex = 26;
+            this.txtEditBasePrice.TabIndex = 2;
             // 
             // label7
             // 
@@ -476,7 +469,7 @@
             this.txtEditAgencyCommission.Location = new System.Drawing.Point(425, 216);
             this.txtEditAgencyCommission.Name = "txtEditAgencyCommission";
             this.txtEditAgencyCommission.Size = new System.Drawing.Size(343, 30);
-            this.txtEditAgencyCommission.TabIndex = 24;
+            this.txtEditAgencyCommission.TabIndex = 3;
             // 
             // label8
             // 
@@ -494,7 +487,7 @@
             this.txtEditPackageDescription.Location = new System.Drawing.Point(425, 133);
             this.txtEditPackageDescription.Name = "txtEditPackageDescription";
             this.txtEditPackageDescription.Size = new System.Drawing.Size(343, 30);
-            this.txtEditPackageDescription.TabIndex = 22;
+            this.txtEditPackageDescription.TabIndex = 1;
             // 
             // label9
             // 
@@ -512,7 +505,7 @@
             this.dtpEditEndDate.Location = new System.Drawing.Point(425, 305);
             this.dtpEditEndDate.Name = "dtpEditEndDate";
             this.dtpEditEndDate.Size = new System.Drawing.Size(343, 30);
-            this.dtpEditEndDate.TabIndex = 20;
+            this.dtpEditEndDate.TabIndex = 6;
             this.dtpEditEndDate.ValueChanged += new System.EventHandler(this.dtpEditEndDate_ValueChanged);
             // 
             // label10
@@ -531,7 +524,7 @@
             this.dtpEditStartDate.Location = new System.Drawing.Point(425, 261);
             this.dtpEditStartDate.Name = "dtpEditStartDate";
             this.dtpEditStartDate.Size = new System.Drawing.Size(343, 30);
-            this.dtpEditStartDate.TabIndex = 18;
+            this.dtpEditStartDate.TabIndex = 4;
             this.dtpEditStartDate.ValueChanged += new System.EventHandler(this.dtpEditStartDate_ValueChanged);
             // 
             // label11
@@ -550,7 +543,7 @@
             this.txtEdiPackageName.Location = new System.Drawing.Point(425, 90);
             this.txtEdiPackageName.Name = "txtEdiPackageName";
             this.txtEdiPackageName.Size = new System.Drawing.Size(343, 30);
-            this.txtEdiPackageName.TabIndex = 16;
+            this.txtEdiPackageName.TabIndex = 0;
             // 
             // label12
             // 
@@ -561,6 +554,28 @@
             this.label12.Size = new System.Drawing.Size(157, 25);
             this.label12.TabIndex = 15;
             this.label12.Text = "Package Name: ";
+            // 
+            // btnEditClear
+            // 
+            this.btnEditClear.BackColor = System.Drawing.Color.Aqua;
+            this.btnEditClear.Location = new System.Drawing.Point(1092, 59);
+            this.btnEditClear.Name = "btnEditClear";
+            this.btnEditClear.Size = new System.Drawing.Size(256, 56);
+            this.btnEditClear.TabIndex = 8;
+            this.btnEditClear.Text = "Clear Form";
+            this.btnEditClear.UseVisualStyleBackColor = false;
+            this.btnEditClear.Click += new System.EventHandler(this.btnEditClear_Click);
+            // 
+            // btnCancelEdit
+            // 
+            this.btnCancelEdit.BackColor = System.Drawing.Color.Aqua;
+            this.btnCancelEdit.Location = new System.Drawing.Point(1092, 292);
+            this.btnCancelEdit.Name = "btnCancelEdit";
+            this.btnCancelEdit.Size = new System.Drawing.Size(256, 56);
+            this.btnCancelEdit.TabIndex = 10;
+            this.btnCancelEdit.Text = "Cancel";
+            this.btnCancelEdit.UseVisualStyleBackColor = false;
+            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
             // 
             // EditPackageProductsTab
             // 
@@ -595,7 +610,7 @@
             // dgvOverlayEditProducts
             // 
             this.dgvOverlayEditProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOverlayEditProducts.Location = new System.Drawing.Point(-4, -2);
+            this.dgvOverlayEditProducts.Location = new System.Drawing.Point(-4, 0);
             this.dgvOverlayEditProducts.Name = "dgvOverlayEditProducts";
             this.dgvOverlayEditProducts.RowHeadersWidth = 51;
             this.dgvOverlayEditProducts.RowTemplate.Height = 24;
@@ -604,22 +619,25 @@
             // 
             // btnRemoveProductFromPackage
             // 
-            this.btnRemoveProductFromPackage.Location = new System.Drawing.Point(524, 191);
+            this.btnRemoveProductFromPackage.BackColor = System.Drawing.Color.Crimson;
+            this.btnRemoveProductFromPackage.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveProductFromPackage.Location = new System.Drawing.Point(648, 193);
             this.btnRemoveProductFromPackage.Name = "btnRemoveProductFromPackage";
             this.btnRemoveProductFromPackage.Size = new System.Drawing.Size(158, 58);
             this.btnRemoveProductFromPackage.TabIndex = 42;
             this.btnRemoveProductFromPackage.Text = "<< Remove ";
-            this.btnRemoveProductFromPackage.UseVisualStyleBackColor = true;
+            this.btnRemoveProductFromPackage.UseVisualStyleBackColor = false;
             this.btnRemoveProductFromPackage.Click += new System.EventHandler(this.btnRemoveProductFromPackage_Click_1);
             // 
             // btnAddProductToPackage
             // 
-            this.btnAddProductToPackage.Location = new System.Drawing.Point(524, 103);
+            this.btnAddProductToPackage.BackColor = System.Drawing.Color.Aqua;
+            this.btnAddProductToPackage.Location = new System.Drawing.Point(648, 105);
             this.btnAddProductToPackage.Name = "btnAddProductToPackage";
             this.btnAddProductToPackage.Size = new System.Drawing.Size(159, 56);
             this.btnAddProductToPackage.TabIndex = 41;
             this.btnAddProductToPackage.Text = "Add >>";
-            this.btnAddProductToPackage.UseVisualStyleBackColor = true;
+            this.btnAddProductToPackage.UseVisualStyleBackColor = false;
             this.btnAddProductToPackage.Click += new System.EventHandler(this.btnAddProductToPackage_Click_1);
             // 
             // cmbProducts
@@ -628,7 +646,7 @@
             this.cmbProducts.FormattingEnabled = true;
             this.cmbProducts.Location = new System.Drawing.Point(197, 62);
             this.cmbProducts.Name = "cmbProducts";
-            this.cmbProducts.Size = new System.Drawing.Size(234, 33);
+            this.cmbProducts.Size = new System.Drawing.Size(398, 33);
             this.cmbProducts.TabIndex = 40;
             this.cmbProducts.SelectedIndexChanged += new System.EventHandler(this.cmbProducts_SelectedIndexChanged_1);
             // 
@@ -656,45 +674,37 @@
             this.lstSuppliers.ItemHeight = 25;
             this.lstSuppliers.Location = new System.Drawing.Point(197, 121);
             this.lstSuppliers.Name = "lstSuppliers";
-            this.lstSuppliers.Size = new System.Drawing.Size(234, 229);
+            this.lstSuppliers.Size = new System.Drawing.Size(398, 229);
             this.lstSuppliers.TabIndex = 37;
             // 
             // dgvEditProducts
             // 
             this.dgvEditProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEditProducts.Location = new System.Drawing.Point(763, 65);
+            this.dgvEditProducts.Location = new System.Drawing.Point(848, 65);
             this.dgvEditProducts.Name = "dgvEditProducts";
             this.dgvEditProducts.RowHeadersWidth = 51;
             this.dgvEditProducts.RowTemplate.Height = 24;
-            this.dgvEditProducts.Size = new System.Drawing.Size(679, 303);
+            this.dgvEditProducts.Size = new System.Drawing.Size(617, 303);
             this.dgvEditProducts.TabIndex = 36;
             // 
             // btnCompleteEditing
             // 
-            this.btnCompleteEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompleteEditing.BackColor = System.Drawing.Color.Aqua;
+            this.btnCompleteEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCompleteEditing.Location = new System.Drawing.Point(408, 397);
             this.btnCompleteEditing.Name = "btnCompleteEditing";
             this.btnCompleteEditing.Size = new System.Drawing.Size(299, 61);
             this.btnCompleteEditing.TabIndex = 45;
             this.btnCompleteEditing.Text = "Done";
-            this.btnCompleteEditing.UseVisualStyleBackColor = true;
+            this.btnCompleteEditing.UseVisualStyleBackColor = false;
             this.btnCompleteEditing.Click += new System.EventHandler(this.btnCompleteEditing_Click);
-            // 
-            // btnCancelEdit
-            // 
-            this.btnCancelEdit.Location = new System.Drawing.Point(1092, 292);
-            this.btnCancelEdit.Name = "btnCancelEdit";
-            this.btnCancelEdit.Size = new System.Drawing.Size(256, 56);
-            this.btnCancelEdit.TabIndex = 41;
-            this.btnCancelEdit.Text = "Cancel";
-            this.btnCancelEdit.UseVisualStyleBackColor = true;
-            this.btnCancelEdit.Click += new System.EventHandler(this.btnCancelEdit_Click);
             // 
             // frmPackageManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1547, 726);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPackageManager";

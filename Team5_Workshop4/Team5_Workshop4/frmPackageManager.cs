@@ -1,4 +1,11 @@
-﻿using DataAccess;
+﻿/*
+ * Name: Bilal Ahmad
+ * Purpose: Manages Packages, add, edit and delete
+ * Project: Workshop 4
+ * Date: Feb 12, 2020
+ * 
+*/
+using DataAccess;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -159,7 +166,9 @@ namespace Team5_Workshop4
             }
 
         }
-
+        /// <summary>
+        /// Adds Package to the database
+        /// </summary>
         private void AddPackage()
         {
             try
@@ -176,7 +185,9 @@ namespace Team5_Workshop4
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// Resets all fields in addPackage tab
+        /// </summary>
         private void ResetAddPackageFields()
         {
             txtPackageName.Text = "";
@@ -234,7 +245,13 @@ namespace Team5_Workshop4
             return package;
 
         }
-
+        /// <summary>
+        /// Validates commission to ensure its a number and less than base price
+        /// </summary>
+        /// <param name="PackageBasePrice"></param>
+        /// <param name="PackageAgencyCommission"></param>
+        /// <param name="addOrEdit"></param>
+        /// <returns></returns>
         private decimal? PriceCommissionValidate(decimal PackageBasePrice, decimal? PackageAgencyCommission, string addOrEdit)
         {
             if (PackageAgencyCommission > PackageBasePrice)
@@ -253,11 +270,14 @@ namespace Team5_Workshop4
             return PackageAgencyCommission;
 
         }
-        //goes to the edit tab to edit the selected package
+        /// <summary>
+        /// goes to the edit tab to edit the selected package
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditSelectedPackage_Click(object sender, EventArgs e)
         {
-            //int packageID = 0;
-            if (globalPackageID == -1)
+            if (globalPackageID == -1) // no edits in process
             {
 
                 PackageManagerPackage selectedPackage = new PackageManagerPackage();
@@ -267,15 +287,12 @@ namespace Team5_Workshop4
                     lblOverlayEditPackage.Visible = false;
                     dgvOverlayEditPackage.Visible = false;
                     tabControl.SelectedTab = EditPackageTab; // switch to edit tab
-                    InputDataToEditPackage(selectedPackage); //loads data to a package
-                    LoadPackageIntoEditFields(selectedPackage); //fills fields from the package
-
-
+                    InputDataToEditPackage(selectedPackage);
+                    LoadPackageIntoEditFields(selectedPackage);
                 }
             }
             else
             {
-
                 if (EditPackageProductsTab.Enabled == true)
                 {
                     tabControl.SelectedTab = EditPackageProductsTab;
@@ -293,7 +310,10 @@ namespace Team5_Workshop4
 
 
         }
-        //loads the data into fields inside the edit tab
+        /// <summary>
+        /// loads the data into fields inside the edit tab
+        /// </summary>
+        /// <param name="selectedPackage"></param>
         private void LoadPackageIntoEditFields(PackageManagerPackage selectedPackage)
         {
             //not nullable
@@ -427,9 +447,6 @@ namespace Team5_Workshop4
             dgvEditProducts.DataSource = ProductsList;
             StyleProductNameSupplierNameDataGridView();
         }
-
-
-
         /// <summary>
         /// Adds product_supplier To the selected package
         /// </summary>
@@ -557,7 +574,9 @@ namespace Team5_Workshop4
 
             }
         }
-
+        /// <summary>
+        /// Updates the package in edit tab
+        /// </summary>
         private void EditPackage()
         {
             try
@@ -627,15 +646,15 @@ namespace Team5_Workshop4
 
             return package;
         }
+        /// <summary>
+        /// Deletes Selected Package
+        /// </summary>
         private void DeleteSelectedPackage()
         {
             int selectedRowIndex = dgvPackages.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dgvPackages.Rows[selectedRowIndex];
             //not nullable
             int PackageID = Convert.ToInt32(selectedRow.Cells["PackageID"].Value);
-            string PackageName = (string)selectedRow.Cells["PkgName"].Value;
-            string PackageDescription = (string)selectedRow.Cells["PkgDesc"].Value;
-            decimal PackageBaseprice = (decimal)selectedRow.Cells["PkgBasePrice"].Value;
 
             bool productsExist = PackageManagerPackageDB.ProductsExist(PackageID);
             if (productsExist == true)
@@ -653,16 +672,25 @@ namespace Team5_Workshop4
             }
             else
             {
-                PackageManagerPackageDB.RemovePackage(PackageID);
-                RefreshAllViews();
-                MessageBox.Show($"Package with PackagID: {PackageID} has been deleted", "Package Deleted");
+                DialogResult result = MessageBox.Show("Are you sure you want to delete the selected package\n\n" +
+                                    "\tClick Yes to continue Deleting the Package\n" +
+                                    "\tClick No to Cancel", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    PackageManagerPackageDB.RemovePackage(PackageID);
+                    RefreshAllViews();
+                    MessageBox.Show($"Package with PackagID: {PackageID} has been deleted", "Package Deleted");
+                }
 
             }
 
 
 
         }
-
+        /// <summary>
+        /// Validates all fields in the add tab before adding package to database
+        /// </summary>
+        /// <returns></returns>
         private bool AddPackagehasValues()
         {
             return
@@ -674,6 +702,10 @@ namespace Team5_Workshop4
                 Validator.IsNonNegativeDecimal(txtPackageBasePrice, "Package Base Price");
 
         }
+        /// <summary>
+        /// Validates all fields in the edit package tab before updating package in database
+        /// </summary>
+        /// <returns></returns>
         private bool EditPackagehasValues()
         {
 
@@ -739,7 +771,6 @@ namespace Team5_Workshop4
             dtpEditEndDate.CustomFormat = " ";
             dtpEditEndDate.Format = DateTimePickerFormat.Custom;
         }
-
         /// <summary>
         /// Changes tab to View Packages and disables the edit tabs
         /// </summary>
@@ -757,12 +788,10 @@ namespace Team5_Workshop4
             dgvOverlayEditProducts.Visible = true;
 
         }
-
         private void btnDeleteSelectedPackage_Click(object sender, EventArgs e)
         {
             DeleteSelectedPackage();
         }
-
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl.SelectedTab == AddPackageTab)
@@ -770,7 +799,11 @@ namespace Team5_Workshop4
                 txtPackageName.Focus();
             }
         }
-
+        /// <summary>
+        /// Clears edit tab all fields
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditClear_Click(object sender, EventArgs e)
         {
             txtEdiPackageName.Text = "";
@@ -778,7 +811,11 @@ namespace Team5_Workshop4
             txtEditBasePrice.Text = "";
             txtEditAgencyCommission.Text = "";
         }
-
+        /// <summary>
+        /// Changes selected tab to edit and disables the overlay and fills the products and supplier data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditProductsPackage_Click(object sender, EventArgs e)
         {
             if (globalPackageID == -1)
@@ -832,7 +869,11 @@ namespace Team5_Workshop4
         {
             Done();
         }
-
+        /// <summary>
+        /// Reloads suppliers for the selected product in the comboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmbProducts_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string productName = cmbProducts.Text;

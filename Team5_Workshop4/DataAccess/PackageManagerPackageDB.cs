@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Bilal Ahmad
  * Date: January 24, 2020
- * Purpose: Package properties
+ * Purpose: Database methods for packageManager
  */
 using System;
 using System.Collections.Generic;
@@ -136,12 +136,10 @@ namespace DataAccess
         /// <returns></returns>
         public static int AddPackage(PackageManagerPackage package)
         {
-            //package = new Package();
             int PackageID = -1;
 
             try
             {
-                //populate packages list from the travel experts database
                 using (SqlConnection connection = MyConnection.GetConnection("TravelExperts"))
                 {
                     string insertQuery = "INSERT INTO Packages(PkgName, PkgStartDate, PkgEndDate, " +
@@ -302,7 +300,7 @@ namespace DataAccess
         }
 
         /// <summary>
-        /// Removes selected package from the database
+        /// Removes selected package from the database and removes the Package and product supplier reference
         /// </summary>
         /// <param name="packageID"></param>
         public static void RemovePackage(int packageID)

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Bilal Ahmad
+ * Purpose: Creates Connection
+ * Project: Workshop 4
+ * Date: Feb 12, 2020
+ * 
+*/
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;

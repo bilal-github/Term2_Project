@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Name: Bilal Ahmad
+ * Purpose: Properties for ProductSuppliers
+ * Project: Workshop 4
+ * Date: Feb 12, 2020
+ * 
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

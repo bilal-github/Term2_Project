@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Name: Bilal Ahmad
+ * Purpose: Database methods for managing products and suppliers in package
+ * Project: Workshop 4
+ * Date: Feb 12, 2020
+ * 
+*/using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
