@@ -10,16 +10,40 @@ using System.Windows.Forms;
 
 namespace Team5_Workshop4
 {
+    
     public partial class MainForm : Form
     {
         public MainForm()
         {
             InitializeComponent();
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+        private void managePackagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmPackageManager = new frmPackageManager();
+            frmPackageManager.MdiParent = this;
+            frmPackageManager.Show();
+            frmPackageManager.WindowState = FormWindowState.Maximized;
+        }
+
+        private void closeCurrentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form activeForm = this.ActiveMdiChild;
+            if(activeForm != null)
+            {
+                activeForm.Close();
+            }
+        }
+
+        
     }
 }
