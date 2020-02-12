@@ -18,3 +18,11 @@ C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\o
 C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csproj.GenerateResource.cache
 C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.exe
 C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.pdb
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\bin\Debug\Team5_Workshop4.exe.config
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\bin\Debug\Team5_Workshop4.exe
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\bin\Debug\Team5_Workshop4.pdb
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\bin\Debug\DataAccess.dll
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\bin\Debug\DataAccess.pdb
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmPackageManager.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.Properties.Resources.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csproj.CopyComplete
