@@ -38,6 +38,11 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePackagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,11 +54,15 @@
             this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.productsToolStripMenuItem,
-            this.packagesToolStripMenuItem});
+            this.packagesToolStripMenuItem,
+            this.suppliersToolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Size = new System.Drawing.Size(1495, 36);
-            this.mainMenuStrip.TabIndex = 0;
+
+            this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+
+     this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
             // 
             // fileToolStripMenuItem
@@ -66,7 +75,7 @@
             this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(56, 32);
-            this.fileToolStripMenuItem.Text = "File";
+this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
@@ -75,6 +84,7 @@
             this.exitToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(266, 32);
+
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -133,19 +143,61 @@
             this.managePackagesToolStripMenuItem.Text = "Manage Packages";
             this.managePackagesToolStripMenuItem.Click += new System.EventHandler(this.managePackagesToolStripMenuItem_Click);
             // 
+            // suppliersToolStripMenuItem
+            // 
+            this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageSuppliersToolStripMenuItem});
+            this.suppliersToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(76, 23);
+            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            this.suppliersToolStripMenuItem.Click += new System.EventHandler(this.suppliersToolStripMenuItem_Click);
+            // 
+            // manageSuppliersToolStripMenuItem
+            // 
+            this.manageSuppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.manageSuppliersToolStripMenuItem.Name = "manageSuppliersToolStripMenuItem";
+            this.manageSuppliersToolStripMenuItem.Size = new System.Drawing.Size(187, 24);
+            this.manageSuppliersToolStripMenuItem.Text = "Manage Suppliers";
+            this.manageSuppliersToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 24);
+            this.toolStripMenuItem1.Text = "Add";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(121, 24);
+            this.toolStripMenuItem2.Text = "Modify";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(121, 24);
+            this.toolStripMenuItem3.Text = "Delete";
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+
             this.ClientSize = new System.Drawing.Size(1495, 678);
             this.Controls.Add(this.mainMenuStrip);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mainMenuStrip;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Travel Experts";
+
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainMenuStrip.ResumeLayout(false);
             this.mainMenuStrip.PerformLayout();
@@ -165,6 +217,11 @@
         private System.Windows.Forms.ToolStripMenuItem packagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managePackagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeCurrentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageSuppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

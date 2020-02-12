@@ -26,6 +26,7 @@ namespace Team5_Workshop4
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
+            IsMdiContainer = true;
             WindowState = FormWindowState.Maximized;
         }
 
@@ -49,6 +50,15 @@ namespace Team5_Workshop4
             {
                 activeForm.Close();
             }
+        }
+
+        
+
+        private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form newForm = new frmSuppliers();
+            newForm.MdiParent = this;
+            newForm.Show();
         }
 
         
