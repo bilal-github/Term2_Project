@@ -51,9 +51,6 @@ namespace Team5_Workshop4
                 activeForm.Close();
             }
         }
-
-        
-
         private void suppliersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form newForm = new frmSuppliers();

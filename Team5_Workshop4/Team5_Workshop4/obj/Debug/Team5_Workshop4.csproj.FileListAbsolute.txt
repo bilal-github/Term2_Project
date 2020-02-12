@@ -11,3 +11,10 @@ C:\Users\834650\source\repos\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Wor
 C:\Users\834650\source\repos\Team5_Workshop4\Team5_Workshop4\bin\Debug\DataAccess.dll
 C:\Users\834650\source\repos\Team5_Workshop4\Team5_Workshop4\bin\Debug\DataAccess.pdb
 C:\Users\834650\source\repos\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csproj.CopyComplete
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csprojAssemblyReference.cache
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmAddModifyDeleteSuppliers.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmSuppliers.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.MainForm.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csproj.GenerateResource.cache
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.exe
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.pdb
