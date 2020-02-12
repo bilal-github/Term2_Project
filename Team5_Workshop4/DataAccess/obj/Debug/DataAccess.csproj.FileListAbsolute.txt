@@ -1,0 +1,5 @@
+C:\Users\834650\source\repos\Team5_Workshop4\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+C:\Users\834650\source\repos\Team5_Workshop4\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\834650\source\repos\Team5_Workshop4\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\834650\source\repos\Team5_Workshop4\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\834650\source\repos\Team5_Workshop4\DataAccess\obj\Debug\DataAccess.pdb
