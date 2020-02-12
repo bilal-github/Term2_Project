@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Ivan Lo
+ * Date: January 24, 2020
+ * Purpose: Suppliers Form
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,23 +24,35 @@ namespace Team5_Workshop4
 
         private Suppliers supplier = new Suppliers();
 
+        /// <summary>
+        /// Quit Supplier form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Form Load Properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmSuppliers_Load(object sender, EventArgs e)
         {
             int supplierID = (int)LoadStateComboBox(0);
-            //if (dblSupplierID.Text != null)
-            //{
-                
-            //}
+           
             
             DisplaySuppliers(supplierID);
-
-            
+            GridStyle();
         }
+
+        /// <summary>
+        /// Load Supplier combobox method
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private int LoadStateComboBox(int index)
         {
             List<Suppliers> supplier = new List<Suppliers>();
@@ -47,8 +64,7 @@ namespace Team5_Workshop4
                 {
                     
                     dblSupplierID.Items.Add(s.SupplierId);
-                }
-                
+                }               
             }
             catch (Exception ex)
             {
@@ -56,18 +72,20 @@ namespace Team5_Workshop4
             }
             return supplier[index].SupplierId;
         }
+
+        /// <summary>
+        /// Display Data in GridView
+        /// </summary>
+        /// <param name="supplierID"></param>
         private void DisplaySuppliers(int supplierID)
         {
             List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYID(supplierID);
-            dataGridView1.DataSource = Supplier;
-            //txtSupplierName.Text = supplier.SupName;   
+            dataGridView1.DataSource = Supplier;             
         }
 
         private void DisplaySupName(string supname)
         {
-            List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYName(supname);
-            //txtSupName.Text = supplier.SupName;
-
+            List<Suppliers> Supplier = SuppliersDB.GetSuppliersBYName(supname);            
         }
 
         private void dblSupplierID_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,6 +93,11 @@ namespace Team5_Workshop4
             DisplaySuppliers(Convert.ToInt32(dblSupplierID.Text));
         }
 
+        /// <summary>
+        /// Add Button properties for Suppliers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmAddModifyDeleteSuppliers  addSupplierForm = new frmAddModifyDeleteSuppliers(supplier);
@@ -84,31 +107,17 @@ namespace Team5_Workshop4
             if (result == DialogResult.OK)
             {
                 supplier = addSupplierForm.supplier;
-                LoadStateComboBox(0);
-                
-                
+                LoadStateComboBox(0);                              
             }
-
-
         }
 
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //frmAddModifyDeleteSuppliers addSupplierForm = new frmAddModifyDeleteSuppliers();
-            //addSupplierForm.addSupplier = true;
-            //DialogResult result = addSupplierForm.ShowDialog();
-            //if (result == DialogResult.OK)
-            //{
-            //    supplier = addSupplierForm.supplier;
-            //    dblSupplierID.SelectedIndex = Convert.ToInt32(supplier.SupplierId);
-
-            //}
-        }
-
+        /// <summary>
+        /// Modify Button properties for Suppliers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifySupplier_Click(object sender, EventArgs e)
-        {
-            //int supID = Convert.ToInt32(dblSupplierID.SelectedItem);
-            //supplier = SuppliersDB.GetSuppliersBYID(supID)[0];
+        {           
             int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
             supplier.SupplierId = Convert.ToInt32(selectedRow.Cells[0].Value);
@@ -124,66 +133,70 @@ namespace Team5_Workshop4
                 supplier = modifySupplierForm.supplier;
                 this.DisplaySupName(supplier.SupName);
                 DisplaySuppliers(supplier.SupplierId);
-                //dataGridView1.Update();
-                //dataGridView1.Refresh();
-            }
-            
-
+                
+            }            
         }
 
+
+        /// <summary>
+        /// Delete Button properties for Suppliers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //frmAddModifyDeleteSuppliers addSupplierForm = new frmAddModifyDeleteSuppliers(supplier);
             int supID = Convert.ToInt32(dblSupplierID.SelectedItem);
             supplier = SuppliersDB.GetSuppliersBYID(supID)[0];
-
             DialogResult result = MessageBox.Show("Delete " + dblSupplierID.SelectedItem.ToString() + "?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //MessageBox.Show(dataGridView1.SelectedCells[1].Value.ToString());
+            
             if (result == DialogResult.Yes)
-            {
-                
-                DisplaySuppliers(supplier.SupplierId);
-                //dataGridView1.Update();
-                //dataGridView1.Refresh();
-                ////supplier = addSupplierForm.supplier;
-                //LoadStateComboBox(0);
+            {                
+                DisplaySuppliers(supplier.SupplierId);               
                 try
                 {
                     if (!SuppliersDB.DeleteSupplier(supplier))
                     {
                         MessageBox.Show("Another user has updated or deleted " +
                             "that customer.", "Database Error");
-                        //this.DisplaySuppliers(supplier.SupplierId);
-                        //if (supplier != null)
-                        //    this.DisplaySupName(supname);
-
-                        
-                        
-
+                                                                    
                     }
                     else
                     {
                         UpdateRefresh();
                     }
-
-
                 }
 
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, ex.GetType().ToString());
                 }
-
             }
         }
 
+
+        /// <summary>
+        /// Update and refresh for combobox and gridview
+        /// </summary>
         private void UpdateRefresh()
         {
             DisplaySuppliers(supplier.SupplierId);
             LoadStateComboBox(0);
             dataGridView1.Update();
             dataGridView1.Refresh();
+        }
+
+        private void GridStyle()
+        {
+            dataGridView1.Columns[0].HeaderText = "Supplier ID";
+            dataGridView1.Columns[1].HeaderText = "Supplier Name";
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Aqua;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dataGridView1.AutoResizeColumns();
+            dataGridView1.Columns[0].Width = 50;
+            dataGridView1.Columns[1].Width = 250;
         }
     }
 }

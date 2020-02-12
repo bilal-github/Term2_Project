@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Ivan Lo
+ * Date: January 24, 2020
+ * Purpose: Suppliers Add/Modify/Delete Form
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +17,8 @@ namespace Team5_Workshop4
 {
     public partial class frmAddModifyDeleteSuppliers : Form
     { public Suppliers supplier;
+
+
         public frmAddModifyDeleteSuppliers(Suppliers _supplier)
         {
             supplier = _supplier;
@@ -21,7 +28,11 @@ namespace Team5_Workshop4
         public bool addSupplier;
          
 
-
+        /// <summary>
+        /// Form Load Properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmAddModifyDeleteSuppliers_Load(object sender, EventArgs e)
         {
             txtSupID.Text = supplier.SupplierId.ToString();
@@ -38,12 +49,17 @@ namespace Team5_Workshop4
             }
         }
 
+
         private void DisplaySupplier()
         {
-
             //txtSupName.Text = supplier.SupName;
         }
 
+        /// <summary>
+        /// Accept Button Properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
         {
             if (addSupplier) // INSERT
@@ -88,12 +104,22 @@ namespace Team5_Workshop4
                 }
             }
         }
+
+        /// <summary>
+        /// Insert Supplier Data into Textboxes
+        /// </summary>
+        /// <param name="supplier"></param>
         private void PutSupplierData(Suppliers supplier)
         {
             supplier.SupName = txtSupName.Text;
             supplier.SupplierId = Convert.ToInt32(txtSupID.Text);
         }
 
+        /// <summary>
+        /// Exit and or Cancel form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();

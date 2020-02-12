@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Ivan Lo
+ * Date: January 24, 2020
+ * Purpose: Suppliers Properties
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
