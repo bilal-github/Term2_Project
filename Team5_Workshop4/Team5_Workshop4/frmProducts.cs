@@ -19,6 +19,7 @@ namespace Team5_Workshop4
 
         private void frmProducts_Load(object sender, EventArgs e)
         {
+
             DisplayProducts();
         }
 

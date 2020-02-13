@@ -47,7 +47,7 @@
             this.gvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvProducts.ColumnHeadersVisible = false;
             this.gvProducts.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gvProducts.Location = new System.Drawing.Point(13, 74);
+            this.gvProducts.Location = new System.Drawing.Point(96, 114);
             this.gvProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gvProducts.Name = "gvProducts";
             this.gvProducts.ReadOnly = true;
@@ -64,14 +64,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(528, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(776, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(95, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 25);
             this.label1.TabIndex = 1;
@@ -79,7 +79,7 @@
             // 
             // btnAddProd
             // 
-            this.btnAddProd.Location = new System.Drawing.Point(363, 74);
+            this.btnAddProd.Location = new System.Drawing.Point(446, 114);
             this.btnAddProd.Name = "btnAddProd";
             this.btnAddProd.Size = new System.Drawing.Size(140, 43);
             this.btnAddProd.TabIndex = 2;
@@ -89,7 +89,7 @@
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(363, 146);
+            this.btnEditProduct.Location = new System.Drawing.Point(446, 186);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(140, 43);
             this.btnEditProduct.TabIndex = 2;
@@ -99,7 +99,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(363, 307);
+            this.btnClose.Location = new System.Drawing.Point(446, 347);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(140, 43);
             this.btnClose.TabIndex = 2;
@@ -111,7 +111,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 364);
+            this.ClientSize = new System.Drawing.Size(776, 496);
+            this.ControlBox = false;
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnEditProduct);
             this.Controls.Add(this.btnAddProd);
@@ -119,6 +120,7 @@
             this.Controls.Add(this.gvProducts);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmProducts";

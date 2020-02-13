@@ -46,6 +46,7 @@ namespace Team5_Workshop4
             
             DisplaySuppliers(supplierID);
             GridStyle();
+
         }
 
         /// <summary>

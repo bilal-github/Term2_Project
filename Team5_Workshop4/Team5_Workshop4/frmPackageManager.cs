@@ -68,6 +68,9 @@ namespace Team5_Workshop4
 
 
         }
+        /// <summary>
+        /// Styles DatagridView for product supplier
+        /// </summary>
         private void StyleProductNameSupplierNameDataGridView()
         {
             dgvEditProducts.Columns[0].HeaderText = "Product Name";

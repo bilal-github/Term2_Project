@@ -17,7 +17,7 @@ using System.Windows.Forms;
 
 namespace Team5_Workshop4
 {
-    
+
     public partial class MainForm : Form
     {
         public MainForm()
@@ -46,7 +46,7 @@ namespace Team5_Workshop4
         private void closeCurrentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form activeForm = this.ActiveMdiChild;
-            if(activeForm != null)
+            if (activeForm != null)
             {
                 activeForm.Close();
             }
@@ -56,17 +56,21 @@ namespace Team5_Workshop4
             Form newForm = new frmSuppliers();
             newForm.MdiParent = this;
             newForm.Show();
+            newForm.WindowState = FormWindowState.Maximized;
         }
-private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form newForm = new frmProducts();
             newForm.MdiParent = this;
             newForm.Show();
-        }private void supplierProductstoolStripMenuItem_Click(object sender, EventArgs e)
+            newForm.WindowState = FormWindowState.Maximized;
+        }
+        private void supplierProductstoolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form newForm = new frmProductsSuppliers();
             newForm.MdiParent = this;
             newForm.Show();
+            newForm.WindowState = FormWindowState.Maximized;
         }
     }
 }

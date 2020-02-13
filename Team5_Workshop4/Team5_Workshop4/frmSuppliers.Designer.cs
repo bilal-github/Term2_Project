@@ -45,9 +45,10 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(340, 11);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(408, 78);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(742, 297);
             this.dataGridView1.TabIndex = 0;
@@ -57,9 +58,9 @@
             this.lblSupplierID.AutoSize = true;
             this.lblSupplierID.BackColor = System.Drawing.Color.Aqua;
             this.lblSupplierID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSupplierID.Location = new System.Drawing.Point(12, 24);
+            this.lblSupplierID.Location = new System.Drawing.Point(80, 91);
             this.lblSupplierID.Name = "lblSupplierID";
-            this.lblSupplierID.Size = new System.Drawing.Size(92, 20);
+            this.lblSupplierID.Size = new System.Drawing.Size(114, 25);
             this.lblSupplierID.TabIndex = 2;
             this.lblSupplierID.Text = "Supplier ID:";
             // 
@@ -67,7 +68,7 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Aqua;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(12, 78);
+            this.btnAdd.Location = new System.Drawing.Point(80, 145);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(308, 46);
             this.btnAdd.TabIndex = 7;
@@ -79,7 +80,7 @@
             // 
             this.btnModifySupplier.BackColor = System.Drawing.Color.Aqua;
             this.btnModifySupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifySupplier.Location = new System.Drawing.Point(15, 150);
+            this.btnModifySupplier.Location = new System.Drawing.Point(83, 217);
             this.btnModifySupplier.Name = "btnModifySupplier";
             this.btnModifySupplier.Size = new System.Drawing.Size(305, 46);
             this.btnModifySupplier.TabIndex = 9;
@@ -91,7 +92,7 @@
             // 
             this.btnQuit.BackColor = System.Drawing.Color.Aqua;
             this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuit.Location = new System.Drawing.Point(10, 340);
+            this.btnQuit.Location = new System.Drawing.Point(78, 407);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(126, 46);
             this.btnQuit.TabIndex = 10;
@@ -103,17 +104,18 @@
             // 
             this.dblSupplierID.BackColor = System.Drawing.Color.PaleTurquoise;
             this.dblSupplierID.FormattingEnabled = true;
-            this.dblSupplierID.Location = new System.Drawing.Point(108, 24);
+            this.dblSupplierID.Location = new System.Drawing.Point(230, 91);
             this.dblSupplierID.Name = "dblSupplierID";
-            this.dblSupplierID.Size = new System.Drawing.Size(212, 21);
+            this.dblSupplierID.Size = new System.Drawing.Size(158, 25);
             this.dblSupplierID.TabIndex = 11;
             this.dblSupplierID.SelectedIndexChanged += new System.EventHandler(this.dblSupplierID_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1111, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1255, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,7 +123,7 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Aqua;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(16, 212);
+            this.btnDelete.Location = new System.Drawing.Point(84, 279);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(304, 46);
             this.btnDelete.TabIndex = 15;
@@ -131,9 +133,10 @@
             // 
             // frmSuppliers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 406);
+            this.ClientSize = new System.Drawing.Size(1255, 576);
+            this.ControlBox = false;
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.dblSupplierID);
             this.Controls.Add(this.btnQuit);
@@ -143,8 +146,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSuppliers";
             this.Text = "Suppliers";
             this.Load += new System.EventHandler(this.frmSuppliers_Load);
