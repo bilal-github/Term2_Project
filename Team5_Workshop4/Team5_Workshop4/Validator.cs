@@ -1,4 +1,4 @@
-﻿﻿/*
+﻿/*
  * Author: Bilal Ahmad
  * Date: December 07, 2019
  * Purpose: Class that holds all of the validation for inputs. 

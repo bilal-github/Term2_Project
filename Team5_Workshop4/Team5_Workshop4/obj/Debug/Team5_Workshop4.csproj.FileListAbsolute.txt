@@ -26,3 +26,6 @@ C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\b
 C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmPackageManager.resources
 C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.Properties.Resources.resources
 C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.csproj.CopyComplete
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmAddEditProduct.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmProducts.resources
+C:\Users\834650\Documents\GitHub\Term2_Project\Team5_Workshop4\Team5_Workshop4\obj\Debug\Team5_Workshop4.frmProductsSuppliers.resources
