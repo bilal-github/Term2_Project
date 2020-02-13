@@ -196,8 +196,9 @@ namespace Team5_Workshop4
             dataGridView1.EnableHeadersVisualStyles = false;
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //dataGridView1.AutoResizeColumns();
-            dataGridView1.Columns[0].Width = 50;
-            dataGridView1.Columns[1].Width = 250;
+            //dataGridView1.Columns[0].Width = 50;
+            //dataGridView1.Columns[1].Width = 250;
+            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
     }
 }
