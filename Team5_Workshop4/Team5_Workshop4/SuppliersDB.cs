@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Author: Ivan Lo
+ * Date: January 24, 2020
+ * Purpose: Suppliers Database
+ */
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,6 +15,10 @@ namespace Team5_Workshop4
 {
     public static class SuppliersDB
     {
+        /// <summary>
+        /// Get Supplier Data query
+        /// </summary>
+        /// <returns></returns>
         public static List<Suppliers> GetSupplier()
         {
             List<Suppliers> supplier = new List<Suppliers>();// an empty list
@@ -40,6 +49,12 @@ namespace Team5_Workshop4
             } // conncection object recycled
             return supplier;
         }// end method
+
+        /// <summary>
+        /// Get Supplier by ID query
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<Suppliers> GetSuppliersBYID(int id)
         {
             List<Suppliers> supplier = new List<Suppliers>();// an empty list
@@ -73,7 +88,11 @@ namespace Team5_Workshop4
         }// end class
 
 
-
+        /// <summary>
+        /// Get Supplier by Name query
+        /// </summary>
+        /// <param name="supname"></param>
+        /// <returns></returns>
         public static List<Suppliers> GetSuppliersBYName(string supname)
         {
             List<Suppliers> supplier = new List<Suppliers>();// an empty list
@@ -140,24 +159,10 @@ namespace Team5_Workshop4
             return suppliers;
         }// end method
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // Add Supplier
+        /// <summary>
+        /// Add Supplier Query
+        /// </summary>
+        /// <param name="sup"></param>
         public static void AddSupplier(Suppliers sup)
         {
             bool isPresent = false;
@@ -181,8 +186,6 @@ namespace Team5_Workshop4
                     }
                 }
             }
-
-
             int supId = 0;
             if(isPresent == false)
             {
@@ -210,7 +213,12 @@ namespace Team5_Workshop4
         }
 
 
-        // Update Supplier
+        /// <summary>
+        /// Update Supplier query
+        /// </summary>
+        /// <param name="oldSup"></param>
+        /// <param name="newSup"></param>
+        /// <returns></returns>
         public static bool UpdateSupplier(Suppliers oldSup, Suppliers newSup)
         {
             int count;
@@ -237,7 +245,11 @@ namespace Team5_Workshop4
             return true; 
         }
 
-
+        /// <summary>
+        /// Delete Supplier Query
+        /// </summary>
+        /// <param name="sup"></param>
+        /// <returns></returns>
         public static bool DeleteSupplier(Suppliers sup)
         {
             int count = 0;
@@ -257,18 +269,5 @@ namespace Team5_Workshop4
             }
             return (count > 0);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
     }// end namespace
 }
