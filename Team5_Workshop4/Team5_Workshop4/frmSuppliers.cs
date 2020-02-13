@@ -1,5 +1,5 @@
 ﻿/*
- * Author: Ivan Lo
+ * Author: Ivan Lo.
  * Date: January 24, 2020
  * Purpose: Suppliers Form
  */
