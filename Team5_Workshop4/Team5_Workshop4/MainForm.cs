@@ -57,7 +57,16 @@ namespace Team5_Workshop4
             newForm.MdiParent = this;
             newForm.Show();
         }
-
-        
+private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form newForm = new frmProducts();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }private void supplierProductstoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form newForm = new frmProductsSuppliers();
+            newForm.MdiParent = this;
+            newForm.Show();
+        }
     }
 }

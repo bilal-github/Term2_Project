@@ -34,11 +34,14 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeCurrentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.packagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePackagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem(); 
+            this.manageSuppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.supplierProductstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,11 +54,13 @@
             this.fileToolStripMenuItem,
             this.productsToolStripMenuItem,
             this.packagesToolStripMenuItem,
-            this.suppliersToolStripMenuItem});
+            this.suppliersToolStripMenuItem,
+            this.supplierProductstoolStripMenuItem});
             this.mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.mainMenuStrip.Name = "mainMenuStrip";
             this.mainMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mainMenuStrip.Size = new System.Drawing.Size(1993, 36);
+this.mainMenuStrip.Size = new System.Drawing.Size(1993, 36);
+
             this.mainMenuStrip.TabIndex = 0;
             this.mainMenuStrip.Text = "mainMenuStrip";
             // 
@@ -100,6 +105,7 @@
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(103, 32);
             this.productsToolStripMenuItem.Text = "Products";
+             this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // addToolStripMenuItem
             // 
@@ -116,6 +122,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.editToolStripMenuItem.Text = "Edit";
+
             // 
             // packagesToolStripMenuItem
             // 
@@ -143,7 +150,49 @@
             this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
             this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
             this.suppliersToolStripMenuItem.Text = "Suppliers";
+           
+            // 
+
+            
+          
             this.suppliersToolStripMenuItem.Click += new System.EventHandler(this.suppliersToolStripMenuItem_Click);
+            // 
+            // manageSuppliersToolStripMenuItem
+            // 
+            this.manageSuppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.manageSuppliersToolStripMenuItem.Name = "manageSuppliersToolStripMenuItem";
+            this.manageSuppliersToolStripMenuItem.Size = new System.Drawing.Size(230, 28);
+            this.manageSuppliersToolStripMenuItem.Text = "Manage Suppliers";
+            this.manageSuppliersToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 28);
+            this.toolStripMenuItem1.Text = "Add";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(146, 28);
+            this.toolStripMenuItem2.Text = "Modify";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(146, 28);
+            this.toolStripMenuItem3.Text = "Delete";
+            // 
+            // supplierProductstoolStripMenuItem
+            // 
+            this.supplierProductstoolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.supplierProductstoolStripMenuItem.Name = "supplierProductstoolStripMenuItem";
+            this.supplierProductstoolStripMenuItem.Size = new System.Drawing.Size(158, 27);
+            this.supplierProductstoolStripMenuItem.Text = "Supplier Products";
+            this.supplierProductstoolStripMenuItem.Click += new System.EventHandler(this.supplierProductstoolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -173,12 +222,15 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem packagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managePackagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeCurrentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageSuppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem supplierProductstoolStripMenuItem;
     }
 }
 

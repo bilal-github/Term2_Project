@@ -106,7 +106,39 @@ namespace Team5_Workshop4
             return supplier;
         }// end class
 
-
+        // Added by Elias Nahas to get list of suppliers sorted by name
+        // Used on frmProductsSuppliers.cs combobox
+        public static List<Suppliers> GetSuppliers()
+        {
+            List<Suppliers> suppliers = new List<Suppliers>();// an empty list
+            Suppliers sp; // auxiliary for reading
+            //create connection
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                // create command
+                string query = "SELECT SupplierId, SupName " +
+                               "FROM Suppliers " +
+                               "ORDER BY SupName";
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    // run the command and process results
+                    connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection))
+                    {
+                        while (reader.Read())
+                        {
+                            // proccess next record from data reader
+                            sp = new Suppliers();
+                            sp.SupplierId =
+                                (int)reader["SupplierId"];
+                            sp.SupName = reader["SupName"].ToString();
+                            suppliers.Add(sp);
+                        }
+                    } // closes reader and recycles object
+                } // cmd object recycled
+            } // conncection object recycled
+            return suppliers;
+        }// end method
 
 
 
