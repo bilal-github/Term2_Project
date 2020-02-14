@@ -38,7 +38,7 @@ namespace Team5_Workshop5.Models
                     {
                         while (reader.Read())
                         {
-                            // proccess next record from data reader
+                            // proccess next record from data reader.
                             pd = new ProductDetails();
                             pd.SupplierId = (int)reader["SupplierId"];
                             pdList.Add(pd);
