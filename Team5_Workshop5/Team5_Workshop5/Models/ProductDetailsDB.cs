@@ -19,7 +19,7 @@ namespace Team5_Workshop5.Models
                 // create command
                 string query = "SELECT b.CustomerId, b.PackageId, bd.Description, pk.PkgDesc, " +
                                "       p.ProdName, s.SupName, bd.TripStart, bd.TripEnd, " +
-                               "       bd.BasePrice, f.FeeAmt " +
+                               "       bd.BasePrice + bd.AgencyCommission + f.FeeAmt as Price  " +
                                "FROM Bookings b " +
                                "FULL OUTER JOIN Packages pk " +
                                "ON b.PackageId = pk.PackageId " +
@@ -32,7 +32,8 @@ namespace Team5_Workshop5.Models
                                "               INNER JOIN Suppliers s " +
                                "               ON p_s.SupplierId = s.SupplierId " +
                                "                   INNER JOIN Fees f " +
-                               "                   ON bd.FeeId = f.FeeId where b.customerID = 135";
+                               "                   ON bd.FeeId = f.FeeId where b.customerID = 135" +
+                               "ORDER BY bd.TripStart";
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
                     // run the command and process results
@@ -59,8 +60,8 @@ namespace Team5_Workshop5.Models
                         pd.SupName = reader["SupName"].ToString();
                         pd.TripStart = Convert.ToDateTime(reader["TripStart"]);
                         pd.TripEnd = Convert.ToDateTime(reader["TripEnd"]);
-                        pd.BasePrice = Convert.ToDecimal(reader["BasePrice"]);
-                        pd.FeeAmt = Convert.ToDecimal(reader["FeeAmt"]);
+                        pd.Price = Convert.ToDecimal(reader["Price"]);
+
                         pdList.Add(pd);
                     }
                     //} // closes reader and recycles object
@@ -69,5 +70,12 @@ namespace Team5_Workshop5.Models
 
             return pdList;
         }
+
+        //public static decimal GetProductsTotal(decimal total)
+        //{
+        //    ProductsTotal pTotal 
+
+        //    retu
+        //}
     }
 }
