@@ -32,7 +32,7 @@ namespace Team5_Workshop5.Models
                                "               ON bd.FeeId = f.FeeId ";
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
-                    // run the command and process results
+                    // run the command and process results.
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection))
                     {
