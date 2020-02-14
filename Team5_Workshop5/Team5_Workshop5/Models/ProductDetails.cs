@@ -5,9 +5,11 @@ using System.Web;
 
 namespace Team5_Workshop5.Models
 {
-    public class Customer
+    public class ProductDetails
     {
-        public int PackageId { get; set; }
+        public int CustomerId { get; set; }
+
+        public int? PackageId { get; set; }
 
         public string Description { get; set; }
 
