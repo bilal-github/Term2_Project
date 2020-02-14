@@ -7,9 +7,9 @@ namespace Team5_Workshop5.Models
 {
     public class ProductDetails
     {
-        public int CustomerId { get; set; }
+        //public int CustomerId { get; set; }
 
-        public int? PackageId { get; set; }
+        //public int? PackageId { get; set; }
 
         public string Description { get; set; }
 
@@ -21,7 +21,9 @@ namespace Team5_Workshop5.Models
 
         public DateTime TripEnd { get; set; }
 
-        public decimal Price { get; set; }
+        public decimal BasePrice { get; set; }
+
+        public decimal FeeAmt { get; set; }
 
         public decimal TotalPrice { get; set; }
     }

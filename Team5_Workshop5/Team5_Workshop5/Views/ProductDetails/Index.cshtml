@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Team5_Workshop5.Models.ProductDetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeeAmt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FeeAmt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+    </tr>
+}
+
+</table>
