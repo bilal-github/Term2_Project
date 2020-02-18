@@ -82,22 +82,25 @@
             // 
             // btnAddProd
             // 
+            this.btnAddProd.BackColor = System.Drawing.Color.Aqua;
             this.btnAddProd.Location = new System.Drawing.Point(257, 227);
             this.btnAddProd.Name = "btnAddProd";
             this.btnAddProd.Size = new System.Drawing.Size(54, 47);
             this.btnAddProd.TabIndex = 3;
             this.btnAddProd.Text = ">>";
-            this.btnAddProd.UseVisualStyleBackColor = true;
+            this.btnAddProd.UseVisualStyleBackColor = false;
             this.btnAddProd.Click += new System.EventHandler(this.btnAddProd_Click);
             // 
             // btnRemoveProd
             // 
+            this.btnRemoveProd.BackColor = System.Drawing.Color.Crimson;
+            this.btnRemoveProd.ForeColor = System.Drawing.Color.White;
             this.btnRemoveProd.Location = new System.Drawing.Point(257, 304);
             this.btnRemoveProd.Name = "btnRemoveProd";
             this.btnRemoveProd.Size = new System.Drawing.Size(54, 47);
             this.btnRemoveProd.TabIndex = 3;
             this.btnRemoveProd.Text = "<<";
-            this.btnRemoveProd.UseVisualStyleBackColor = true;
+            this.btnRemoveProd.UseVisualStyleBackColor = false;
             this.btnRemoveProd.Click += new System.EventHandler(this.btnRemoveProd_Click);
             // 
             // gvAvailableProd
