@@ -103,6 +103,7 @@
             // 
             // dblSupplierID
             // 
+            this.dblSupplierID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dblSupplierID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dblSupplierID.FormattingEnabled = true;
             this.dblSupplierID.Location = new System.Drawing.Point(167, 67);
@@ -118,7 +119,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1109, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1386, 38);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
