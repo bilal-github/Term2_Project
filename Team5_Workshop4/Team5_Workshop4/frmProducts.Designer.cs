@@ -64,7 +64,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(776, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(776, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,32 +79,37 @@
             // 
             // btnAddProd
             // 
+            this.btnAddProd.BackColor = System.Drawing.Color.Aqua;
             this.btnAddProd.Location = new System.Drawing.Point(446, 114);
             this.btnAddProd.Name = "btnAddProd";
             this.btnAddProd.Size = new System.Drawing.Size(140, 43);
             this.btnAddProd.TabIndex = 2;
             this.btnAddProd.Text = "Add Product";
-            this.btnAddProd.UseVisualStyleBackColor = true;
+            this.btnAddProd.UseVisualStyleBackColor = false;
             this.btnAddProd.Click += new System.EventHandler(this.btnAddProd_Click);
             // 
             // btnEditProduct
             // 
+            this.btnEditProduct.BackColor = System.Drawing.Color.Aqua;
             this.btnEditProduct.Location = new System.Drawing.Point(446, 186);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(140, 43);
             this.btnEditProduct.TabIndex = 2;
             this.btnEditProduct.Text = "Edit Product";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.UseVisualStyleBackColor = false;
             this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
             // btnClose
             // 
+            this.btnClose.BackColor = System.Drawing.Color.DarkRed;
+            this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(446, 347);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(140, 43);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Visible = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmProducts

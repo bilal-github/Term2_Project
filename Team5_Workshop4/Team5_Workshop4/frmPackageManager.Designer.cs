@@ -137,7 +137,6 @@
             // btnEditProductsPackage
             // 
             this.btnEditProductsPackage.BackColor = System.Drawing.Color.Aqua;
-            this.btnEditProductsPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProductsPackage.Location = new System.Drawing.Point(504, 437);
             this.btnEditProductsPackage.Name = "btnEditProductsPackage";
             this.btnEditProductsPackage.Size = new System.Drawing.Size(368, 70);
@@ -149,7 +148,6 @@
             // btnDeleteSelectedPackage
             // 
             this.btnDeleteSelectedPackage.BackColor = System.Drawing.Color.DarkRed;
-            this.btnDeleteSelectedPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteSelectedPackage.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDeleteSelectedPackage.Location = new System.Drawing.Point(973, 437);
             this.btnDeleteSelectedPackage.Name = "btnDeleteSelectedPackage";
@@ -162,7 +160,6 @@
             // btnEditSelectedPackage
             // 
             this.btnEditSelectedPackage.BackColor = System.Drawing.Color.Aqua;
-            this.btnEditSelectedPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditSelectedPackage.Location = new System.Drawing.Point(77, 437);
             this.btnEditSelectedPackage.Name = "btnEditSelectedPackage";
             this.btnEditSelectedPackage.Size = new System.Drawing.Size(368, 70);
@@ -223,10 +220,9 @@
             this.btnAddPackage.BackColor = System.Drawing.Color.Aqua;
             this.btnAddPackage.FlatAppearance.BorderSize = 0;
             this.btnAddPackage.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAddPackage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPackage.Location = new System.Drawing.Point(461, 327);
             this.btnAddPackage.Name = "btnAddPackage";
-            this.btnAddPackage.Size = new System.Drawing.Size(166, 69);
+            this.btnAddPackage.Size = new System.Drawing.Size(166, 54);
             this.btnAddPackage.TabIndex = 9;
             this.btnAddPackage.Text = "Submit";
             this.btnAddPackage.UseVisualStyleBackColor = false;
@@ -386,7 +382,7 @@
             // dgvOverlayEditPackage
             // 
             this.dgvOverlayEditPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOverlayEditPackage.Location = new System.Drawing.Point(-4, 0);
+            this.dgvOverlayEditPackage.Location = new System.Drawing.Point(-4, 2);
             this.dgvOverlayEditPackage.Name = "dgvOverlayEditPackage";
             this.dgvOverlayEditPackage.RowHeadersWidth = 51;
             this.dgvOverlayEditPackage.RowTemplate.Height = 24;
@@ -568,7 +564,8 @@
             // 
             // btnCancelEdit
             // 
-            this.btnCancelEdit.BackColor = System.Drawing.Color.Aqua;
+            this.btnCancelEdit.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancelEdit.ForeColor = System.Drawing.Color.White;
             this.btnCancelEdit.Location = new System.Drawing.Point(1092, 292);
             this.btnCancelEdit.Name = "btnCancelEdit";
             this.btnCancelEdit.Size = new System.Drawing.Size(256, 56);
@@ -610,7 +607,7 @@
             // dgvOverlayEditProducts
             // 
             this.dgvOverlayEditProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOverlayEditProducts.Location = new System.Drawing.Point(-4, 0);
+            this.dgvOverlayEditProducts.Location = new System.Drawing.Point(-4, 3);
             this.dgvOverlayEditProducts.Name = "dgvOverlayEditProducts";
             this.dgvOverlayEditProducts.RowHeadersWidth = 51;
             this.dgvOverlayEditProducts.RowTemplate.Height = 24;
@@ -689,8 +686,9 @@
             // 
             // btnCompleteEditing
             // 
-            this.btnCompleteEditing.BackColor = System.Drawing.Color.Aqua;
+            this.btnCompleteEditing.BackColor = System.Drawing.Color.DarkRed;
             this.btnCompleteEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompleteEditing.ForeColor = System.Drawing.Color.White;
             this.btnCompleteEditing.Location = new System.Drawing.Point(408, 397);
             this.btnCompleteEditing.Name = "btnCompleteEditing";
             this.btnCompleteEditing.Size = new System.Drawing.Size(299, 61);
