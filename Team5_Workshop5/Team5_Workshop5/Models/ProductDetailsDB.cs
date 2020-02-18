@@ -9,12 +9,13 @@ namespace Team5_Workshop5.Models
 {
     public static class ProductDetailsDB
     {
+        const string connectionStringName = "TravelExperts";
         public static List<ProductDetails> GetProductDetails(int custId)
         {
             List<ProductDetails> pdList = new List<ProductDetails>();
             ProductDetails pd;
 
-            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            using (SqlConnection connection = MyConnection.GetConnection(connectionStringName))
             {
                 // create command
                 string query = "SELECT b.CustomerId, b.PackageId, bd.Description, pk.PkgDesc, " +

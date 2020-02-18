@@ -12,7 +12,7 @@ namespace Team5_Workshop5.Controllers
         // GET: ProductDetails
         public ViewResult Index()
         {
-            int custId = 135; // Needs to be passed in from session
+            int custId = Convert.ToInt32(Session["CustomerID"]); // Needs to be passed in from session
             List<ProductDetails> pdList = new List<ProductDetails>();
             pdList = ProductDetailsDB.GetProductDetails(custId);
             decimal total = 0;

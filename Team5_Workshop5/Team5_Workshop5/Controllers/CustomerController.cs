@@ -71,9 +71,11 @@ namespace Team5_Workshop5.Controllers
                 Customer validCustomer = CustomerModel.Authenticate(customer);
                 if (customer.UserID == validCustomer.UserID)
                 {
+                    int customerID = CustomerModel.RetrieveCustomberID(customer.UserID);
                     //redirect to welcome page 
                     Session["CustFirstName"] = customer.CustFirstName;
                     Session["UserID"] = customer.UserID;
+                    Session["CustomerID"] = customerID;
                     ViewBag.firstName = Session["CustFirstName"];
                     ViewBag.message = "Valid User";
                     return RedirectToAction("Index", "Customer");
@@ -166,6 +168,7 @@ namespace Team5_Workshop5.Controllers
         {
             Session["CustFirstName"] = null;
             Session["UserID"] = null;
+            Session["CustomerID"] = null;
             return RedirectToAction("LoginCustomer", "Customer");
 
         }
