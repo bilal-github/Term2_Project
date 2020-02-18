@@ -1,0 +1,56 @@
+﻿@** Name: Bilal Ahmad
+    * Date: Feb 13, 2020
+    * Purpose: Shows summary of the existing data
+*@
+@model Team5_Workshop5.Models.Customer
+@{
+    ViewBag.Title = "Personal Information";
+}
+<div class="bg-light p-3">
+    <h2>Personal Information</h2>
+    <hr />
+
+    @using (Html.BeginForm("Products", "Home", FormMethod.Post))
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CustFirstName) :<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustFirstName)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustLastName):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustLastName)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustAddress):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustAddress)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustCity):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustCity)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustProv):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustProv)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustPostal):<span class="pl-3 text-warning"> @Html.DisplayFor(model => model.CustPostal)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustCountry):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustCountry)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustHomePhone):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustHomePhone)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustBusPhone):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustBusPhone)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CustEmail):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.CustEmail)</span>
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserID):<span class="pl-3 text-warning">@Html.DisplayFor(model => model.UserID)</span>
+            </dt>
+        </dl>
+    }
+    <p>
+        @*@Html.ActionLink("Personal Info", "PersonalInformation", "Customer", new { UserID = Session["UserID"] }, new { @class = "nav-link" })*@
+        @Html.ActionLink("Update Personal Info", "UpdatePersonalInformation", "Customer", null, new { @class = "btn btn-primary" })
+    </p>
+</div>
+
