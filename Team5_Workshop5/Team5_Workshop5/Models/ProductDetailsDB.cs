@@ -33,11 +33,12 @@ namespace Team5_Workshop5.Models
                                "               INNER JOIN Suppliers s " +
                                "               ON p_s.SupplierId = s.SupplierId " +
                                "                   INNER JOIN Fees f " +
-                               "                   ON bd.FeeId = f.FeeId where b.customerID = 135" +
+                               "                   ON bd.FeeId = f.FeeId where b.customerID = @customerID " +
                                "ORDER BY bd.TripStart";
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
                     // run the command and process results
+                    cmd.Parameters.AddWithValue("@customerID", custId);
                     connection.Open();
                     SqlDataReader reader = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
                     

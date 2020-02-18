@@ -129,6 +129,7 @@
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete Supplier";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Visible = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmSuppliers

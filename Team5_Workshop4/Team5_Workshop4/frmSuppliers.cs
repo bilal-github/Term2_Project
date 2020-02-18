@@ -45,6 +45,7 @@ namespace Team5_Workshop4
            
             
             DisplaySuppliers(supplierID);
+            dblSupplierID.SelectedIndex = 0;
             GridStyle();
 
         }
