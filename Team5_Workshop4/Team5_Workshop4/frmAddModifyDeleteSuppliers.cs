@@ -40,11 +40,15 @@ namespace Team5_Workshop4
             if (addSupplier)
             {
                 this.Text = "Add Supplier";
+                this.txtSupID.Enabled = true;
+                this.txtSupID.Text = "0";
+                this.txtSupName.Text = "";
 
             }
             else
             {
                 this.Text = "Modify Supplier";
+                this.txtSupID.Enabled = false;
                 this.DisplaySupplier();
             }
         }
