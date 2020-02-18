@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+ @** Name: Bilal Ahmad
+ * Date: Feb 13, 2020
+ * Purpose: Layout page for the all the views
+     *@
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,31 +14,54 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary  fixed-top">
-        <div class="container">
-            @Html.ActionLink("Travel Experts", "Index", "Home", null, new { @class = "navbar-brand" })
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNav" aria-controls="collapseNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+            <div class="container">
+                @if (Session["UserID"] != null)
+                {
+                    @Html.ActionLink("Dashboard", "---", "Customer", null, new { @class = "navbar-brand DashboardCustom" })
 
-            <div class="collapse navbar-collapse" id="collapseNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                }
+                else
+                {
+                    @Html.ActionLink("Travel Experts", "LoginCustomer", "Customer", null, new { @class = "navbar-brand" })
+                }
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseNav" aria-controls="collapseNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <div class="collapse navbar-collapse" id="collapseNav">
+                    <ul class="navbar-nav mr-auto">
+                        @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active" })</li>*@
+                        @*<li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>*@
+                        @*<li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>*@
+
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        @if (Session["UserID"] != null)
+                        {
+                            @Html.ActionLink("Personal Info", "PersonalInformation", "Customer", new { @class = "nav-link" })
+
+                            @*@Html.ActionLink("Personal Info", "PersonalInformation", "Customer", new { UserID = Session["UserID"] }, new { @class = "nav-link" })*@
+                            @Html.ActionLink("Logout", "Logout", "Customer", null, new { @class = "nav-link" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "LoginCustomer", "Customer", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Register", "CustomerRegistration", null, new { @class = "nav-link" })
+
+                        }
+                        @*<input class="form-control mr-sm-2" type="text" placeholder="Search">*@
+                        @*<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>*@
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
-    <div class="container body-content">
+        </nav>
+    </div>
+    <div class="container body-content mt-5">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="row justify-content-center fixed-bottom pt-4">
             <p>&copy; @DateTime.Now.Year - Travel Experts</p>
         </footer>
     </div>

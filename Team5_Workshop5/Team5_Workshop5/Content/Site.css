@@ -1,6 +1,31 @@
-﻿body {
+﻿/*
+ * Name: Bilal Ahmad
+ * Date: Feb 13, 2020
+ * Purpose: Extra Styling
+ */
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('/Images/BackgroundImage-extra.jpg');
+    background-color: black;
+    background-size: cover;
+    background-position:center center;
+    background-repeat: no-repeat;
+    margin:auto;
+}
+
+.loginStyle{
+    opacity:0.7;
+    font-size:larger;
+    /*margin-left: 50%;*/
+    /*margin-right:50%;*/
+}
+#invalidLogin{
+    font-size:larger;
+    color:red
+}
+nav {
+    opacity: 1;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +46,16 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.DashboardCustom {
+    color: #18BC9C !important;
+}
+
+#RegistrationSubmit {
+    width: 50px;
+}
+
+footer>p{
+    color:white;
 }

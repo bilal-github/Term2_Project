@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\MyConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +141,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\BackgroundImage-extra.jpg" />
+    <Content Include="Images\BackgroundImage.jpg" />
+    <Content Include="Images\icon.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -267,6 +271,10 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\CustomerRegistration.cshtml" />
+    <Content Include="Views\Customer\LoginCustomer.cshtml" />
+    <Content Include="Views\Customer\PersonalInformation.cshtml" />
+    <Content Include="Views\Customer\UpdatePersonalInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

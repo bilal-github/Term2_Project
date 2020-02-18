@@ -16,7 +16,7 @@ namespace Team5_Workshop5
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Customer", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Customer", action = "LoginCustomer", id = UrlParameter.Optional }
             );
         }
     }
