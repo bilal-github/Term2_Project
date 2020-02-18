@@ -111,22 +111,6 @@ namespace Team5_Workshop5.Models
             }
             return Password;
         }
-
-        /// <summary>
-        /// Encrypt passwords using system.security.cryptography
-        /// </summary>
-        /// <param name="password"></param>
-        /// <returns></returns>
-        public static string Encrypt(string password)
-        {
-            var sha1Provider = new SHA1CryptoServiceProvider();
-            var unicodeEncoding = new UnicodeEncoding();
-
-            var hash = sha1Provider.ComputeHash(unicodeEncoding.GetBytes(password));
-
-            return Encoding.UTF8.GetString(hash, 0, hash.Length);
-
-        }
         /// <summary>
         /// Checks if the credentials are correct during login
         /// </summary>
@@ -293,7 +277,7 @@ namespace Team5_Workshop5.Models
                         SqlDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
-                            int result = 0;
+                            decimal result = 0;
                             customer.CustFirstName = reader[0].ToString();
                             customer.CustLastName = reader[1].ToString();
                             customer.CustAddress = reader[2].ToString();
@@ -301,7 +285,7 @@ namespace Team5_Workshop5.Models
                             customer.CustProv = reader[4].ToString();
                             customer.CustPostal = reader[5].ToString();
                             customer.CustCountry = reader[6].ToString();
-                            if (!Int32.TryParse(reader[7].ToString(), out result))
+                            if (!decimal.TryParse(reader[7].ToString(), out result))
                             {
                                 customer.CustHomePhone = null;
                             }
@@ -309,7 +293,7 @@ namespace Team5_Workshop5.Models
                             {
                                 customer.CustHomePhone = reader[7].ToString();
                             }
-                            if (!Int32.TryParse(reader[8].ToString(), out result))
+                            if (!decimal.TryParse(reader[8].ToString(), out result))
                             {
                                 customer.CustBusPhone = null;
                             }

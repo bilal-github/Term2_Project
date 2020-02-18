@@ -10,18 +10,25 @@ namespace Team5_Workshop5.Controllers
     public class ProductDetailsController : Controller
     {
         // GET: ProductDetails
-        public ViewResult Index()
+        public ActionResult Index()
         {
-            int custId = Convert.ToInt32(Session["CustomerID"]); // Needs to be passed in from session
-            List<ProductDetails> pdList = new List<ProductDetails>();
-            pdList = ProductDetailsDB.GetProductDetails(custId);
-            decimal total = 0;
-            foreach(ProductDetails p in pdList)
+            if (Session["UserID"] != null)
             {
-                total += p.Price;
+                int custId = Convert.ToInt32(Session["CustomerID"]); // Needs to be passed in from session
+                List<ProductDetails> pdList = new List<ProductDetails>();
+                pdList = ProductDetailsDB.GetProductDetails(custId);
+                decimal total = 0;
+                foreach (ProductDetails p in pdList)
+                {
+                    total += p.Price;
+                }
+                ViewBag.total = total;
+                return View(pdList);
             }
-            ViewBag.total = total;
-            return View(pdList);
+            else
+            {
+                return RedirectToAction("LoginCustomer", "Customer");
+            }
         }
 
         //// GET: ProductDetails/Details/5

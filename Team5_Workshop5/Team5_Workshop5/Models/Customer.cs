@@ -43,7 +43,8 @@ namespace Team5_Workshop5.Models
         [DisplayName("Business Phone")]
         [RegularExpression(@"([0-9]{10})$", ErrorMessage = "Invalid Phone Number")]
         public string CustBusPhone { get; set; }
-        [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", ErrorMessage = "Please enter correct email address")]
+        //[RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$", ErrorMessage = "Please enter correct email address")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Please enter correct email address")]
         [DisplayName("Email")]
         public string CustEmail { get; set; }//
         [Required]

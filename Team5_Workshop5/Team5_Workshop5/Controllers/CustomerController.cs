@@ -40,9 +40,6 @@ namespace Team5_Workshop5.Controllers
             if (ModelState.IsValid)
             {
                 int customerID = CustomerModel.RetrieveCustomerID(customer.UserID);
-
-                //customer.Password = CustomerModel.Encrypt(customer.Password);
-
                 if (customerID == 0)
                 {
                     customer.Password = Encryption.Encrypt(customer.Password);
@@ -89,13 +86,12 @@ namespace Team5_Workshop5.Controllers
                     {
                         int customerID = CustomerModel.RetrieveCustomerID(customer.UserID);
                         customer = CustomerModel.GetCustomerInfo(customer.UserID);
-                        //redirect to welcome page 
                         Session["CustFirstName"] = customer.CustFirstName;
                         Session["UserID"] = customer.UserID;
                         Session["CustomerID"] = customerID;
                         ViewBag.firstName = Session["CustFirstName"];
                         ViewBag.message = "Valid User";
-                        return RedirectToAction("Index", "Customer");
+                        return RedirectToAction("Index", "ProductDetails");
                     }
                     else
                     {
@@ -108,26 +104,6 @@ namespace Team5_Workshop5.Controllers
                     ViewBag.message = "UserID doesn't Exist";
                     return View();
                 }
-
-
-                ////customer.Password = CustomerModel.Encrypt(customer.Password);
-                //Customer validCustomer = CustomerModel.Authenticate(customer);
-                //if (customer.UserID == validCustomer.UserID)
-                //{
-                //    int customerID = CustomerModel.RetrieveCustomberID(customer.UserID);
-                //    //redirect to welcome page 
-                //    Session["CustFirstName"] = customer.CustFirstName;
-                //    Session["UserID"] = customer.UserID;
-                //    Session["CustomerID"] = customerID;
-                //    ViewBag.firstName = Session["CustFirstName"];
-                //    ViewBag.message = "Valid User";
-                //    return RedirectToAction("Index", "Customer");
-                //}
-                //else
-                //{
-                //    ViewBag.message = "UserID and Password don't match";
-                //    return View();
-                //}
             }
             return View();
         }
@@ -193,7 +169,6 @@ namespace Team5_Workshop5.Controllers
                 if (UserID == customer.UserID)
                 {
                     int customerID = CustomerModel.RetrieveCustomerID(UserID);
-                    //customer.Password = CustomerModel.Encrypt(customer.Password);
                     customer.Password = Encryption.Encrypt(customer.Password);
                     Customer updatedcustomer = CustomerModel.UpdateCustomer(customer, customerID);
                     Session["UserID"] = updatedcustomer.UserID;
@@ -206,7 +181,6 @@ namespace Team5_Workshop5.Controllers
                     if (newCustomerID == 0)
                     {
                         int oldCustomerID = CustomerModel.RetrieveCustomerID(UserID);
-                        //customer.Password = CustomerModel.Encrypt(customer.Password);
                         customer.Password = Encryption.Encrypt(customer.Password);
                         Customer updatedcustomer = CustomerModel.UpdateCustomer(customer, oldCustomerID);
                         Session["UserID"] = updatedcustomer.UserID;
@@ -217,7 +191,6 @@ namespace Team5_Workshop5.Controllers
                     {
                         ViewBag.message = "UserID already exists, Choose another UserID";
                     }
-
                 }
             }
             return View(customer);
@@ -225,7 +198,7 @@ namespace Team5_Workshop5.Controllers
 
         }
         /// <summary>
-        /// logs out the customer
+        /// logs out the customer by clearing the session variables
         /// </summary>
         /// <returns></returns>
         [HttpGet]

@@ -40,7 +40,7 @@
                     <form class="form-inline my-2 my-lg-0">
                         @if (Session["UserID"] != null)
                         {
-                            @Html.ActionLink("Personal Info", "PersonalInformation", "Customer", new { @class = "nav-link" })
+                            @Html.ActionLink("Personal Info", "PersonalInformation", "Customer",null, new { @class = "nav-link" })
 
                             @*@Html.ActionLink("Personal Info", "PersonalInformation", "Customer", new { UserID = Session["UserID"] }, new { @class = "nav-link" })*@
                             @Html.ActionLink("Logout", "Logout", "Customer", null, new { @class = "nav-link" })
@@ -48,7 +48,7 @@
                         else
                         {
                             @Html.ActionLink("Login", "LoginCustomer", "Customer", null, new { @class = "nav-link" })
-                            @Html.ActionLink("Register", "CustomerRegistration", null, new { @class = "nav-link" })
+                            @Html.ActionLink("Register", "CustomerRegistration","Customer", null, new { @class = "nav-link" })
 
                         }
                         @*<input class="form-control mr-sm-2" type="text" placeholder="Search">*@
