@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Team5_Workshop5.Models.ProductDetails>
+
+@{
+    ViewBag.Title = "Your Bookings";
+}
+
+<h2>Your Bookings</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TripEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TripEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+    </tr>
+}
+<tr>
+    <td class="total" colspan="5">
+        Total:
+    </td>
+    <td>
+        @ViewBag.total.ToString("c2")
+    </td>
+</tr>
+
+
+</table>
