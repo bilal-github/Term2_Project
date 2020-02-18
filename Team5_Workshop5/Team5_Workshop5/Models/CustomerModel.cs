@@ -84,6 +84,34 @@ namespace Team5_Workshop5.Models
 
             return customer;
         }
+
+        internal static string retrievePasswordHash(string userID)
+        {
+            string Password = "";
+            string SelectString = "Select Password from Customers where UserID = @UserID";
+            try
+            {
+                using (SqlConnection connection = MyConnection.GetConnection(connectionStringName))
+                {
+                    using (SqlCommand command = new SqlCommand(SelectString, connection))
+                    {
+                        command.Parameters.AddWithValue("UserID", userID);
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            Password = reader[0].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return Password;
+        }
+
         /// <summary>
         /// Encrypt passwords using system.security.cryptography
         /// </summary>
@@ -144,13 +172,14 @@ namespace Team5_Workshop5.Models
                 throw ex;
             }
             return customer;
+
         }
         /// <summary>
         /// Retrieves CustomerID to ensure the proper customer is updated
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
-        public static int RetrieveCustomberID(string userID)
+        public static int RetrieveCustomerID(string userID)
         {
             int customerID = 0;
             Customer customer = new Customer();
@@ -288,8 +317,15 @@ namespace Team5_Workshop5.Models
                             {
                                 customer.CustBusPhone = reader[8].ToString();
                             }
+                            if ((reader[9].ToString()).Contains("@"))
+                            {
+                                customer.CustEmail = reader[9].ToString();
+                            }
+                            else
+                            {
+                                customer.CustEmail = null;
+                            }
 
-                            customer.CustEmail = reader[9].ToString();
                             customer.UserID = reader[10].ToString();
                         }
 
@@ -304,6 +340,6 @@ namespace Team5_Workshop5.Models
             }
             return customer;
         }
-       
+
     }
 }

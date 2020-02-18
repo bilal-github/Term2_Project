@@ -1,6 +1,7 @@
 ﻿/** Name: Bilal Ahmad
  * Date: Feb 13, 2020
  * Purpose: Controller for All Customer related views
+ * Every user has a default password of 123123123
      */
 using System;
 using System.Collections.Generic;
@@ -38,12 +39,23 @@ namespace Team5_Workshop5.Controllers
             var errors = ModelState.Values.SelectMany(v => v.Errors);
             if (ModelState.IsValid)
             {
-                customer.Password = CustomerModel.Encrypt(customer.Password);
-                Customer newCustomer = CustomerModel.RegisterCustomer(customer);
-                Session["CustFirstName"] = newCustomer.CustFirstName;
-                Session["UserID"] = newCustomer.UserID;
-                ViewBag.firstName = Session["CustFirstName"];
-                return RedirectToAction("Index", "Customer");
+                int customerID = CustomerModel.RetrieveCustomerID(customer.UserID);
+
+                //customer.Password = CustomerModel.Encrypt(customer.Password);
+
+                if (customerID == 0)
+                {
+                    customer.Password = Encryption.Encrypt(customer.Password);
+                    Customer newCustomer = CustomerModel.RegisterCustomer(customer);
+                    Session["CustFirstName"] = newCustomer.CustFirstName;
+                    Session["UserID"] = newCustomer.UserID;
+                    ViewBag.firstName = Session["CustFirstName"];
+                    return RedirectToAction("Index", "Customer");
+                }
+                else
+                {
+                    ViewBag.message = "UserID already exists, Choose another UserID";
+                }
             }
             return View(customer);
 
@@ -65,26 +77,57 @@ namespace Team5_Workshop5.Controllers
         [HttpPost]
         public ActionResult LoginCustomer(Customer customer)
         {
+
             if ((customer.UserID != null) && (customer.Password != null))
             {
-                customer.Password = CustomerModel.Encrypt(customer.Password);
-                Customer validCustomer = CustomerModel.Authenticate(customer);
-                if (customer.UserID == validCustomer.UserID)
+
+                string hashedPassword = CustomerModel.retrievePasswordHash(customer.UserID);
+                if (hashedPassword != null)
                 {
-                    int customerID = CustomerModel.RetrieveCustomberID(customer.UserID);
-                    //redirect to welcome page 
-                    Session["CustFirstName"] = customer.CustFirstName;
-                    Session["UserID"] = customer.UserID;
-                    Session["CustomerID"] = customerID;
-                    ViewBag.firstName = Session["CustFirstName"];
-                    ViewBag.message = "Valid User";
-                    return RedirectToAction("Index", "Customer");
+                    bool CheckPassword = Encryption.Verify(customer.Password, hashedPassword);
+                    if (CheckPassword == true)
+                    {
+                        int customerID = CustomerModel.RetrieveCustomerID(customer.UserID);
+                        customer = CustomerModel.GetCustomerInfo(customer.UserID);
+                        //redirect to welcome page 
+                        Session["CustFirstName"] = customer.CustFirstName;
+                        Session["UserID"] = customer.UserID;
+                        Session["CustomerID"] = customerID;
+                        ViewBag.firstName = Session["CustFirstName"];
+                        ViewBag.message = "Valid User";
+                        return RedirectToAction("Index", "Customer");
+                    }
+                    else
+                    {
+                        ViewBag.message = "UserID and Password don't match";
+                        return View();
+                    }
                 }
                 else
                 {
-                    ViewBag.message = "UserID and Password don't match";
+                    ViewBag.message = "UserID doesn't Exist";
                     return View();
                 }
+
+
+                ////customer.Password = CustomerModel.Encrypt(customer.Password);
+                //Customer validCustomer = CustomerModel.Authenticate(customer);
+                //if (customer.UserID == validCustomer.UserID)
+                //{
+                //    int customerID = CustomerModel.RetrieveCustomberID(customer.UserID);
+                //    //redirect to welcome page 
+                //    Session["CustFirstName"] = customer.CustFirstName;
+                //    Session["UserID"] = customer.UserID;
+                //    Session["CustomerID"] = customerID;
+                //    ViewBag.firstName = Session["CustFirstName"];
+                //    ViewBag.message = "Valid User";
+                //    return RedirectToAction("Index", "Customer");
+                //}
+                //else
+                //{
+                //    ViewBag.message = "UserID and Password don't match";
+                //    return View();
+                //}
             }
             return View();
         }
@@ -146,17 +189,39 @@ namespace Team5_Workshop5.Controllers
             if (ModelState.IsValid)
             {
                 string UserID = Session["UserID"].ToString();
-                int customerID = CustomerModel.RetrieveCustomberID(UserID);
-                customer.Password = CustomerModel.Encrypt(customer.Password);
-                Customer updatedcustomer = CustomerModel.UpdateCustomer(customer, customerID);
-                Session["UserID"] = updatedcustomer.UserID;
-                Session["CustFirstName"] = customer.CustFirstName;
-                return RedirectToAction("PersonalInformation", "Customer");
+
+                if (UserID == customer.UserID)
+                {
+                    int customerID = CustomerModel.RetrieveCustomerID(UserID);
+                    //customer.Password = CustomerModel.Encrypt(customer.Password);
+                    customer.Password = Encryption.Encrypt(customer.Password);
+                    Customer updatedcustomer = CustomerModel.UpdateCustomer(customer, customerID);
+                    Session["UserID"] = updatedcustomer.UserID;
+                    Session["CustFirstName"] = customer.CustFirstName;
+                    return RedirectToAction("PersonalInformation", "Customer");
+                }
+                else
+                {
+                    int newCustomerID = CustomerModel.RetrieveCustomerID(customer.UserID);
+                    if (newCustomerID == 0)
+                    {
+                        int oldCustomerID = CustomerModel.RetrieveCustomerID(UserID);
+                        //customer.Password = CustomerModel.Encrypt(customer.Password);
+                        customer.Password = Encryption.Encrypt(customer.Password);
+                        Customer updatedcustomer = CustomerModel.UpdateCustomer(customer, oldCustomerID);
+                        Session["UserID"] = updatedcustomer.UserID;
+                        Session["CustFirstName"] = updatedcustomer.CustFirstName;
+                        return RedirectToAction("PersonalInformation", "Customer");
+                    }
+                    else
+                    {
+                        ViewBag.message = "UserID already exists, Choose another UserID";
+                    }
+
+                }
             }
-            else
-            {
-                return View(customer);
-            }
+            return View(customer);
+
 
         }
         /// <summary>
