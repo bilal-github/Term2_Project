@@ -102,6 +102,8 @@ namespace Team5_Workshop4
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            supplier.SupplierId = SuppliersDB.GetNextSupplier();
+            //frmAddModifyDeleteSuppliers  addSupplierForm = new frmAddModifyDeleteSuppliers(supplier);
             frmAddModifyDeleteSuppliers  addSupplierForm = new frmAddModifyDeleteSuppliers(supplier);
             addSupplierForm.addSupplier = true;
             DialogResult result = addSupplierForm.ShowDialog();

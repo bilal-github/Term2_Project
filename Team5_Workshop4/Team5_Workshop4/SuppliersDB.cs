@@ -159,6 +159,28 @@ namespace Team5_Workshop4
             return suppliers;
         }// end method
 
+        public static int GetNextSupplier()
+        {
+            int nxtSup = 0;
+            using (SqlConnection connection = TravelExpertsDB.GetConnection())
+            {
+                string SelectString = "SELECT MAX(SupplierID) AS SupplierID FROM Suppliers";
+
+                using (SqlCommand command = new SqlCommand(SelectString, connection))
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Console.WriteLine(reader["SupplierID"].ToString());
+                        nxtSup = Convert.ToInt32(reader["SupplierID"]);
+                        nxtSup++;
+                    }
+                }
+            }
+            return nxtSup;
+        }
+
         /// <summary>
         /// Add Supplier Query
         /// </summary>

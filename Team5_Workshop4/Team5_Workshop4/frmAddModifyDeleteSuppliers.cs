@@ -40,8 +40,8 @@ namespace Team5_Workshop4
             if (addSupplier)
             {
                 this.Text = "Add Supplier";
-                this.txtSupID.Enabled = true;
-                this.txtSupID.Text = "0";
+                this.txtSupID.Enabled = false;
+                //this.txtSupID.Text = "0";
                 this.txtSupName.Text = "";
 
             }
@@ -66,45 +66,49 @@ namespace Team5_Workshop4
         /// <param name="e"></param>
         private void btnAccept_Click(object sender, EventArgs e)
         {
-            if (addSupplier) // INSERT
+            if(Validator.IsPresent(txtSupName, "Supplier Name"))
             {
-                supplier = new Suppliers();
-                this.PutSupplierData(supplier);
-                try
+
+                if (addSupplier) // INSERT
                 {
-                   SuppliersDB.AddSupplier(supplier);
-                    this.DialogResult = DialogResult.OK;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
-                }
-            }
-            else // UPDATE
-            {
-                Suppliers newSupplier = new Suppliers();
-                Suppliers oldSupplier = supplier;
-                newSupplier.SupName = txtSupName.Text;
-                oldSupplier = SuppliersDB.GetSuppliersBYID(Convert.ToInt32(txtSupID.Text))[0];
-                
-                this.PutSupplierData(newSupplier);
-                try
-                {
-                    if (!SuppliersDB.UpdateSupplier(supplier, newSupplier))
+                    supplier = new Suppliers();
+                    this.PutSupplierData(supplier);
+                    try
                     {
-                        MessageBox.Show("Another user has updated or " +
-                            "deleted that customer.", "Database Error");
-                        this.DialogResult = DialogResult.Retry;
-                    }
-                    else // success
-                    {
-                        supplier = newSupplier;
+                       SuppliersDB.AddSupplier(supplier);
                         this.DialogResult = DialogResult.OK;
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
-                catch (Exception ex)
+                else // UPDATE
                 {
-                    MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    Suppliers newSupplier = new Suppliers();
+                    Suppliers oldSupplier = supplier;
+                    newSupplier.SupName = txtSupName.Text;
+                    oldSupplier = SuppliersDB.GetSuppliersBYID(Convert.ToInt32(txtSupID.Text))[0];
+                
+                    this.PutSupplierData(newSupplier);
+                    try
+                    {
+                        if (!SuppliersDB.UpdateSupplier(supplier, newSupplier))
+                        {
+                            MessageBox.Show("Another user has updated or " +
+                                "deleted that customer.", "Database Error");
+                            this.DialogResult = DialogResult.Retry;
+                        }
+                        else // success
+                        {
+                            supplier = newSupplier;
+                            this.DialogResult = DialogResult.OK;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, ex.GetType().ToString());
+                    }
                 }
             }
         }
