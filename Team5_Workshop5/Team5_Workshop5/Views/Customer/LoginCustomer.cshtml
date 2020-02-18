@@ -27,6 +27,9 @@
                 <input class="btn btn-primary" value="Login" type="submit" />
             </div>
             <br />
+            <h6>
+                @Html.ActionLink("Create a new account", "CustomerRegistration", "Customer", new { @class = "" })
+            </h6>
         </div>
     }
     <h4 id="invalidLogin">@ViewBag.message</h4>
