@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Name: Ivan Lo and Elias Nahas
+ * Date: Feb 13, 2020
+ * Purpose: Product Class to hold properties from database
+ */
+ 
+ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
