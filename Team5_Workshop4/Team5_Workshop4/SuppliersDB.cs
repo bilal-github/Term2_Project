@@ -167,11 +167,11 @@ namespace Team5_Workshop4
         {
             bool isPresent = false;
             int count = 0;
-            using(SqlConnection connection1 = TravelExpertsDB.GetConnection())
+            using (SqlConnection connection1 = TravelExpertsDB.GetConnection())
             {
                 string SelectString = "SELECT SupplierID from suppliers where SupplierID = @SupplierID";
-                
-                using(SqlCommand command = new SqlCommand(SelectString, connection1))
+
+                using (SqlCommand command = new SqlCommand(SelectString, connection1))
                 {
                     command.Parameters.AddWithValue("SupplierID", sup.SupplierId);
                     connection1.Open();

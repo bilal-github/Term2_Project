@@ -38,7 +38,7 @@ namespace Team5_Workshop4
             {
                 lblAddEditProduct.Text = "Edit Product:"; // Change label to read Edit Product
                 cmbProducts.Visible = true; // Show combo box of products
-                cmbProducts.SelectedIndex = ProdIdx; // change selected item in combo box
+                cmbProducts.SelectedValue = ProdIdx; // change selected item in combo box
                 //Console.WriteLine("Combobox " + ProdIdx);
             }
 
@@ -65,7 +65,7 @@ namespace Team5_Workshop4
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cmbProducts.SelectedIndex = ProdIdx;
+            cmbProducts.SelectedValue = ProdIdx;
             //else
             //    cmbProducts.SelectedIndex = 0;
             txtNewProdName.Text = "";
