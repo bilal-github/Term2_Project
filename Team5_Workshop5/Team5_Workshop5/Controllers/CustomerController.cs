@@ -47,7 +47,7 @@ namespace Team5_Workshop5.Controllers
                     Session["CustFirstName"] = newCustomer.CustFirstName;
                     Session["UserID"] = newCustomer.UserID;
                     ViewBag.firstName = Session["CustFirstName"];
-                    return RedirectToAction("Index", "Customer");
+                    return RedirectToAction("PersonalInformation", "Customer");
                 }
                 else
                 {
@@ -91,7 +91,7 @@ namespace Team5_Workshop5.Controllers
                         Session["CustomerID"] = customerID;
                         ViewBag.firstName = Session["CustFirstName"];
                         ViewBag.message = "Valid User";
-                        return RedirectToAction("Index", "ProductDetails");
+                        return RedirectToAction("PersonalInformation", "Customer");
                     }
                     else
                     {

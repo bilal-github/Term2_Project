@@ -202,6 +202,7 @@
             this.btnClearStartDate.TabIndex = 3;
             this.btnClearStartDate.Text = "Clear Start Date";
             this.btnClearStartDate.UseVisualStyleBackColor = false;
+            this.btnClearStartDate.Visible = false;
             this.btnClearStartDate.Click += new System.EventHandler(this.btnClearStartDate_Click);
             // 
             // btnClearEndDate
@@ -213,6 +214,7 @@
             this.btnClearEndDate.TabIndex = 5;
             this.btnClearEndDate.Text = "Clear End Date";
             this.btnClearEndDate.UseVisualStyleBackColor = false;
+            this.btnClearEndDate.Visible = false;
             this.btnClearEndDate.Click += new System.EventHandler(this.btnClearEndDate_Click);
             // 
             // btnAddPackage
@@ -382,7 +384,7 @@
             // dgvOverlayEditPackage
             // 
             this.dgvOverlayEditPackage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOverlayEditPackage.Location = new System.Drawing.Point(-4, 2);
+            this.dgvOverlayEditPackage.Location = new System.Drawing.Point(-99, 0);
             this.dgvOverlayEditPackage.Name = "dgvOverlayEditPackage";
             this.dgvOverlayEditPackage.RowHeadersWidth = 51;
             this.dgvOverlayEditPackage.RowTemplate.Height = 24;
@@ -428,6 +430,7 @@
             this.btnEditClearStartDate.TabIndex = 5;
             this.btnEditClearStartDate.Text = "Clear Start Date";
             this.btnEditClearStartDate.UseVisualStyleBackColor = false;
+            this.btnEditClearStartDate.Visible = false;
             this.btnEditClearStartDate.Click += new System.EventHandler(this.btnEditClearStartDate_Click);
             // 
             // btnEditClearEndDate
@@ -439,6 +442,7 @@
             this.btnEditClearEndDate.TabIndex = 7;
             this.btnEditClearEndDate.Text = "Clear End Date";
             this.btnEditClearEndDate.UseVisualStyleBackColor = false;
+            this.btnEditClearEndDate.Visible = false;
             this.btnEditClearEndDate.Click += new System.EventHandler(this.btnEditClearEndDate_Click);
             // 
             // txtEditBasePrice

@@ -30,6 +30,8 @@ namespace Team5_Workshop5.Models
         [DisplayName("Province")]
         public string CustProv { get; set; }//
         [Required(ErrorMessage = "Postal Code is Required")]
+        [RegularExpression(@"^[ABCEGHJ-NPRSTVXYabceghj-nprstvxy][0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z] ?[0-9][ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][0-9]$", 
+            ErrorMessage = "Invalid format (A1A 1A1)")]
         [StringLength(7, ErrorMessage = "The Postal Code must be no loger than 7 characters.")]
         [DisplayName("Postal Code")]
         public string CustPostal { get; set; }//
