@@ -62,7 +62,7 @@
                 <div class="form-group">
                     @Html.LabelFor(l => l.CustEmail, "Email")
                     @Html.TextBoxFor(u => u.CustEmail, new { @class = "form-control", placeholder = "Enter your Email" })
-                    @Html.ValidationMessageFor(u => u.CustEmail, "", new { @style = "color:red" })
+                    @Html.ValidationMessageFor(a => a.CustEmail, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

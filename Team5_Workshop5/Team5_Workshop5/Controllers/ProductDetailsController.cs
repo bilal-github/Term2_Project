@@ -1,10 +1,4 @@
-﻿/*
- * Name: Ivan Lo and Elias Nahas
- * Date: Feb 13, 2020
- * Purpose: Methods to create and populate bookings list
- */
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,25 +9,15 @@ namespace Team5_Workshop5.Controllers
 {
     public class ProductDetailsController : Controller
     {
-        /// <summary>
-        /// Gets Customer ID from browser session and
-        /// passes it to the bookings list view database method
-        /// to create a list of bookings to display
-        /// </summary>
-        /// <returns></returns>
-        /// 
-        [HttpGet]
+        // GET: ProductDetails
         public ActionResult Index()
         {
             if (Session["UserID"] != null)
             {
-                int custId = Convert.ToInt32(Session["CustomerID"]);
+                int custId = Convert.ToInt32(Session["CustomerID"]); // Needs to be passed in from session
                 List<ProductDetails> pdList = new List<ProductDetails>();
                 pdList = ProductDetailsDB.GetProductDetails(custId);
                 decimal total = 0;
-
-                // Keeps a running total of all bookings and stores it in
-                // ViewBag.total
                 foreach (ProductDetails p in pdList)
                 {
                     total += p.Price;
